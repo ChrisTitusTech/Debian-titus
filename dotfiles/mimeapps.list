@@ -116,13 +116,19 @@ video/x-ms-wvxvideo=mpv.desktop
 video/x-ogm+ogg=mpv.desktop
 video/x-theora=mpv.desktop
 x-scheme-handler/ftp=brave-browser.desktop
-x-scheme-handler/http=brave-browser.desktop
-x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/http=xfce4-web-browser.desktop
+x-scheme-handler/https=xfce4-web-browser.desktop
 x-scheme-handler/ics=google-calendar-import.desktop
 x-scheme-handler/magnet=transmission-gtk.desktop
 x-scheme-handler/spotify=spotify.desktop
 x-scheme-handler/terminal=kitty.desktop
+x-scheme-handler/web+cardano=brave-browser.desktop
 
 [Added Associations]
 image/jpeg=feh.desktop;
-
+application/x-shellscript=codium.desktop;org.gnome.gedit.desktop;
+x-scheme-handler/http=xfce4-web-browser.desktop;
+x-scheme-handler/https=xfce4-web-browser.desktop;
+text/x-csrc=codium.desktop;
+image/x-xcursor=org.gnome.gedit.desktop;
+text/plain=org.gnome.gedit.desktop;

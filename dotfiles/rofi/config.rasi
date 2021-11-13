@@ -4,4 +4,3 @@ configuration {
   show-icons:         true;
   icon-theme:         "Papirus";
 }
-@import "/home/titus/.config/rofi/sidebar.rasi"

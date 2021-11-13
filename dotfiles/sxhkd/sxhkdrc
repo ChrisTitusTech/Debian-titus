@@ -14,8 +14,15 @@ super + r
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# My program Hotkeys
 super + b
 	brave-browser-stable
+
+super + p 
+	flameshot full -p /media/drive/Screenshots
+
+super + shift + p
+	flameshot gui -p /media/drive/Screenshots
 
 #
 # bspwm hotkeys
