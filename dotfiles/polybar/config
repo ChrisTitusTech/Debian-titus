@@ -455,7 +455,7 @@ format-discharging-underline = ${colors.background}
 ;   %percentage_raw%
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
-label-charging =   %percentage%% 
+label-charging =  %percentage%% 
 
 ; Available tokens:
 ;   %percentage% (default) - is set to 100 if full-at is reached
