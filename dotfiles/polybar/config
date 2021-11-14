@@ -78,7 +78,7 @@ font-5 = Noto Color Emoji:scale=20;4
 
 modules-left = launcher sep left bspwm right sep left bsplayout bspmode right
 modules-center = xwindow
-modules-right = left pulseaudio right sep left backlight bluetooth vpn dunst redshift right sep left eth wlan right sep left time right sep powermenu
+modules-right = left pulseaudio right sep left battery backlight bluetooth vpn dunst redshift right sep left eth wlan right sep left time right sep powermenu
 
 override-redirect = true
 wm-restack = bspwm
@@ -399,12 +399,110 @@ ramp-volume-foreground = ${colors.shade6}
 ramp-volume-background = ${colors.shade16}
 ramp-volume-padding-right = 1
 
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.shade3}
+format-charging-background = ${colors.shade16}
+format-charging-padding-right = 5
+format-charging-overline = ${colors.background}
+format-charging-underline = ${colors.background}
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${colors.shade3}
+format-discharging-background = ${colors.shade16}
+format-discharging-padding-right = 5
+format-discharging-overline = ${colors.background}
+format-discharging-underline = ${colors.background}
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging =   %percentage%% 
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%% 
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+label-full = 
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
 [module/backlight]
 type = internal/backlight
 
 ; Use the following command to list available cards:
 ; $ ls -1 /sys/class/backlight/
-card = ddcci6
+card = intel_backlight
 
 enable-scroll = true
 
@@ -422,6 +520,7 @@ ramp-background = ${colors.shade16}
 ramp-overline = ${colors.background}
 ramp-underline = ${colors.background}
 ramp-padding-right = 1
+ramp-padding-left= 1
 
 bar-width = 10
 bar-indicator = 雷
@@ -467,7 +566,7 @@ format-disconnected =
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlp0s20f3
 interval = 3.0
 
 format-connected-background = ${colors.shade16}
@@ -490,7 +589,6 @@ format-disconnected = <label-disconnected>
 format-disconnected-background = ${colors.shade16}
 ;format-disconnected-padding = 1
 label-disconnected = 
-;label-disconnected = %{A1:setsid -f urxvt -e nmtui:}%{A3:/home/barbarossa/.config/polybar/polybar-scripts/togglewifi.sh:}%{F#4a4845}%{F-} D/C%{A}%{A}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
