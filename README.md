@@ -7,7 +7,7 @@ Debian customizations from Chris Titus Tech
 
 _Run as ROOT_
 ```
-apt install bspwm polybar sddm rofi kitty thunar flameshot neofetch sxhkd git
+apt install bspwm polybar sddm rofi kitty thunar flameshot neofetch sxhkd git lxpolkit lxappearance xorg
 
 # Download Nordic Theme
 cd /usr/share/themes/
