@@ -77,5 +77,11 @@ do
    sleep 1
    discordpid=$(pidof Discord)
 done
-sleep 0.5
+sleep 2.5
 bspc desktop -f ^1
+bash ~/.config/bspwm/servicemonitor.sh media-data.mount
+bash ~/.config/bspwm/servicemonitor.sh media-drive.mount
+bash ~/.config/bspwm/servicemonitor.sh media-mainpool.mount
+bash ~/.config/bspwm/servicemonitor.sh media-images.mount
+bash ~/.config/bspwm/servicemonitor.sh media-fcp.mount
+
