@@ -42,7 +42,7 @@ bspc config focus_follows_pointer true
 bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
 
 #Application Rules
-bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Gimp desktop='^8' follow=on
 bspc rule -a wine desktop='^7' state=floating follow=on
 bspc rule -a variety state=floating
 bspc rule -a Chromium desktop='^2'
@@ -79,9 +79,9 @@ do
 done
 sleep 2.5
 bspc desktop -f ^1
-bash ~/.config/bspwm/servicemonitor.sh media-data.mount
-bash ~/.config/bspwm/servicemonitor.sh media-drive.mount
-bash ~/.config/bspwm/servicemonitor.sh media-mainpool.mount
-bash ~/.config/bspwm/servicemonitor.sh media-images.mount
-bash ~/.config/bspwm/servicemonitor.sh media-fcp.mount
+#bash ~/.config/bspwm/service-monitor.sh media-data.mount
+#bash ~/.config/bspwm/service-monitor.sh media-drive.mount
+#bash ~/.config/bspwm/service-monitor.sh media-mainpool.mount
+#bash ~/.config/bspwm/service-monitor.sh media-images.mount
+#bash ~/.config/bspwm/service-monitor.sh media-fcp.mount
 
