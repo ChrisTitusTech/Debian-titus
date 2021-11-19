@@ -73,9 +73,10 @@ do
    synergypid=$(pidof synergy)
 done
 sleep 0.5
-pingresult=$(ping -c 1 1.1.1.1 > /dev/null ; echo $?)
+# better ping 
+ping -c 1 1.1.1.1 &>/dev/null
 while [ $pingresult -ne 0 ]; do
-  pingresult=$(ping -c 1 1.1.1.1 > /dev/null ; echo $?)
+  ping -c 1 1.1.1.1 &>/dev/null
 done
 bspc desktop -f ^6
 /bin/Discord &
