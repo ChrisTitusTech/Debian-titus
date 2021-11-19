@@ -1,5 +1,9 @@
 #! /bin/sh
 
+# Variable Defines
+color0=#3B4252
+color4=#D8DEE9
+
 # Make sure sxhkd is always running
 while :; do
     if pgrep -x sxhkd > /dev/null; then
@@ -11,7 +15,7 @@ while :; do
 done &
 
 #Clean lingering programs when reloaded
-$HOME/.config/bspwm/clean &
+"$HOME/.config/bspwm/clean" &
 
 #Fix Mouse curoor on startup 
 xsetroot -cursor_name left_ptr
@@ -49,8 +53,8 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a Discord desktop='^9'
-bspc rule -a synergy desktop='^10'
+bspc rule -a Discord desktop='^6'
+bspc rule -a synergy desktop='^9'
 
 #Auto-Start
 bspc desktop -f ^9
@@ -58,7 +62,7 @@ sleep 0.50
 urxvtc &
 bash ~/.config/polybar/launch.sh &
 lxpolkit &
-picom --config $HOME/.config/bspwm/picom.conf &
+picom --config "$HOME/.config/bspwm/picom.conf" &
 variety &
 /usr/bin/synergys -f -d ERROR -n studio-pc -c /etc/synergy.conf -a 192.168.69.10:24800 --log ~/.local/log/synergy.log &
 flameshot &
@@ -69,6 +73,10 @@ do
    synergypid=$(pidof synergy)
 done
 sleep 0.5
+pingresult=$(ping -c 1 1.1.1.1 > /dev/null ; echo $?)
+while [ $pingresult -ne 0 ]; do
+  pingresult=$(ping -c 1 1.1.1.1 > /dev/null ; echo $?)
+done
 bspc desktop -f ^6
 /bin/Discord &
 discordpid=0

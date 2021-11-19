@@ -280,7 +280,7 @@ type = custom/text
 content-background = ${colors.background}
 content-foreground = ${colors.shade17}
 content-padding = 1
-click-left = "$HOME/.config/rofi/launchers/colorful/launcher.sh"
+click-left = "rofi -show drun"
 content = ""
 
 [module/xwindow]
