@@ -3,5 +3,5 @@
 configuration {
   show-icons: true;
   icon-theme: "Papirus";
+  theme: "themes/sidetab-nord.rasi";
 }
-@import "sidetab.rasi"
