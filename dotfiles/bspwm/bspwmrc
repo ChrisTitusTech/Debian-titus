@@ -87,9 +87,9 @@ do
 done
 sleep 2.5
 bspc desktop -f ^1
-#bash ~/.config/bspwm/service-monitor.sh media-data.mount
-#bash ~/.config/bspwm/service-monitor.sh media-drive.mount
-#bash ~/.config/bspwm/service-monitor.sh media-mainpool.mount
-#bash ~/.config/bspwm/service-monitor.sh media-images.mount
-#bash ~/.config/bspwm/service-monitor.sh media-fcp.mount
+bash ~/.config/bspwm/service-monitor.sh media-data.mount
+bash ~/.config/bspwm/service-monitor.sh media-drive.mount
+bash ~/.config/bspwm/service-monitor.sh media-mainpool.mount
+bash ~/.config/bspwm/service-monitor.sh media-images.mount
+bash ~/.config/bspwm/service-monitor.sh media-fcp.mount
 
