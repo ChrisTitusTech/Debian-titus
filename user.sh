@@ -1,4 +1,4 @@
-sudo apt install papirus-icon-theme lxappearance fonts-noto-color-emoji fonts-firacode fonts-font-awesome libqt5svg5 qml-module-qtquick-controls
+sudo apt install unzip papirus-icon-theme lxappearance fonts-noto-color-emoji fonts-firacode fonts-font-awesome libqt5svg5 qml-module-qtquick-controls
 
 # Make Theme folders
 mkdir -p ~/.themes ~/.fonts
@@ -17,3 +17,7 @@ cd Layan-cursors
 sudo ./install.sh
 
 echo "RUN LXAPPEARANCE"
+
+cp .Xresources ~
+cp .Xnord ~
+cp -R dotfiles/* ~/.config/
