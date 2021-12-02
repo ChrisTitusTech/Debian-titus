@@ -16,7 +16,7 @@ git clone https://github.com/vinceliuice/Layan-cursors
 cd Layan-cursors
 sudo ./install.sh
 
-echo "RUN LXAPPEARANCE Expand this!"
+echo "RUN LXAPPEARANCE Expand this WTH IS THIS!"
 
 cp .Xresources ~
 cp .Xnord ~
