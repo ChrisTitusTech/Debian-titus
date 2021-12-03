@@ -11,6 +11,7 @@ unzip Meslo.zip -d ~/.fonts
 fc-cache -vf
 
 # Layan Cursors
+mkdir -p ~/build
 cd ~/build
 git clone https://github.com/vinceliuice/Layan-cursors
 cd Layan-cursors
