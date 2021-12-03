@@ -19,6 +19,6 @@ sudo ./install.sh
 
 echo "RUN LXAPPEARANCE Expand this WTH IS THIS!"
 
-cp ../.Xresources ~
-cp ../.Xnord ~
+cp .Xresources ~
+cp .Xnord ~
 cp -R dotfiles/* ~/.config/
