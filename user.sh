@@ -1,7 +1,7 @@
 sudo apt install unzip papirus-icon-theme lxappearance fonts-noto-color-emoji fonts-firacode fonts-font-awesome libqt5svg5 qml-module-qtquick-controls
 
 # Make Theme folders
-mkdir -p ~/.themes ~/.fonts
+mkdir -p ~/.themes ~/.fonts ~/.config
 
 # Fira Code Nerd Font variant needed
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
@@ -18,6 +18,6 @@ sudo ./install.sh
 
 echo "RUN LXAPPEARANCE Expand this WTH IS THIS!"
 
-cp .Xresources ~
-cp .Xnord ~
+cp ../.Xresources ~
+cp ../.Xnord ~
 cp -R dotfiles/* ~/.config/
