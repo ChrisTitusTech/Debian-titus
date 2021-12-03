@@ -2,14 +2,14 @@
 Debian customizations from Chris Titus Tech
  
 ## Requirements
+_This install changes Debian to the SID (Dev) Branch_
 
+### Download Debian non-free netinstall
+
+Use the following Debian ISO as the base <https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.1.0+nonfree/amd64/iso-cd/>
+
+*do NOT grab the EDU download and this includes non-free and firmware*
 ### Base Stuff - Root
-
-*Debian Sid* /etc/apt/sources.list (example)
-```
-deb http://deb.debian.org/debian/ sid main non-free contrib
-deb-src http://deb.debian.org/debian/ sid main non-free contrib
-```
 
 _Run as ROOT_
 ```

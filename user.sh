@@ -1,4 +1,7 @@
-sudo apt install unzip papirus-icon-theme lxappearance fonts-noto-color-emoji fonts-firacode fonts-font-awesome libqt5svg5 qml-module-qtquick-controls
+#!/bin/bash
+
+# Appearance pacakges
+sudo apt install papirus-icon-theme lxappearance fonts-noto-color-emoji fonts-firacode fonts-font-awesome libqt5svg5 qml-module-qtquick-controls
 
 # Make Theme folders
 mkdir -p ~/.themes ~/.fonts
@@ -11,12 +14,12 @@ unzip Meslo.zip -d ~/.fonts
 fc-cache -vf
 
 # Layan Cursors
-cd ~/build
+cd "$HOME/build"
 git clone https://github.com/vinceliuice/Layan-cursors
 cd Layan-cursors
 sudo ./install.sh
 
-echo "RUN LXAPPEARANCE Expand this WTH IS THIS!"
+echo "RUN LXAPPEARANCE"
 
 cp .Xresources ~
 cp .Xnord ~
