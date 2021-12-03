@@ -8,7 +8,7 @@ mkdir -p ~/.themes ~/.fonts
 
 # Fira Code Nerd Font variant needed
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-unzip FiraCode.zip ~/.fonts
+unzip FiraCode.zip -d ~/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
 unzip Meslo.zip -d ~/.fonts   
 fc-cache -vf
