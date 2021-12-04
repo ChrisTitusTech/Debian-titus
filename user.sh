@@ -28,6 +28,7 @@ git clone https://github.com/slicer69/doas.git
 cd doas/
 mkdir build && cd build 
 sudo make install
+sudo cp doas.conf /usr/local/etc/doas.conf
 
 echo "RUN LXAPPEARANCE"
 
