@@ -22,7 +22,7 @@ git clone https://github.com/vinceliuice/Layan-cursors
 cd Layan-cursors
 sudo ./install.sh
 
-# if people want doas 
+# if people want to use doas 
  sudo apt install build-essential make bison flex libpam0g-dev 
 git clone https://github.com/slicer69/doas.git
 cd doas/
