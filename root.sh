@@ -7,6 +7,9 @@ cp sources.list /etc/apt/sources.list
 # Add Custom Titus Rofi Deb Package
 dpkg -i 'Custom Packages/rofi_1.7.0-1_amd64.deb'
 
+# Update packages list
+apt update
+
 # Add base packages
 apt install unzip picom bspwm polybar sddm rofi kitty thunar flameshot neofetch sxhkd git lxpolkit lxappearance xorg
 
