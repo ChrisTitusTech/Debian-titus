@@ -1,0 +1,9 @@
+# These packages are required by the installer to install the system in UEFIM boot mode
+grub-efi-amd64-bin
+grub-efi-amd64
+grub-efi-amd64-signed
+mokutil
+shim-unsigned
+shim-helpers-amd64-signed
+shim-signed-common
+shim-signed

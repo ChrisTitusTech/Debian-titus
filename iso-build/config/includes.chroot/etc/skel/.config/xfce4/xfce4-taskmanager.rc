@@ -1,0 +1,16 @@
+[Settings]
+ShowAllProcesses=TRUE
+FullCommandLine=TRUE
+ShowStatusIcon=TRUE
+ShowApplicationIcons=TRUE
+PromptTerminateTask=TRUE
+RefreshRate=750
+ColumnUID=TRUE
+ColumnPID=TRUE
+ColumnPPID=FALSE
+ColumnState=TRUE
+ColumnVSZ=TRUE
+ColumnRSS=TRUE
+ColumnCPU=TRUE
+ColumnPriority=TRUE
+ProcessTreeView=FALSE

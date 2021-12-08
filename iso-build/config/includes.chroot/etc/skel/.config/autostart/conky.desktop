@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Conky
+Comment=Display information on your desktop
+Exec=conky -p 20
+Icon=user-desktop
+Path=
+Terminal=false
+StartupNotify=false
+Hidden=true

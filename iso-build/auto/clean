@@ -1,0 +1,35 @@
+#!/bin/sh
+
+lb clean noauto "$@"
+rm -f binary.log prepare.log
+rm -rf	.build/ \
+	config/binary \
+	config/bootstrap \
+	config/build \
+	config/chroot \
+	config/common \
+	config/source \
+	config/hooks/normal/0020-create-mtab-symlink.hook.chroot \
+	config/hooks/normal/0030-enable-cryptsetup.hook.chroot \
+	config/hooks/normal/0040-create-locales-files.hook.chroot \
+	config/hooks/normal/0100-remove-adjtime-configuration.hook.chroot \
+	config/hooks/normal/0110-remove-backup-files.hook.chroot \
+	config/hooks/normal/0120-remove-dbus-machine-id.hook.chroot \
+	config/hooks/normal/0130-remove-gnome-icon-cache.hook.chroot \
+	config/hooks/normal/0140-remove-log-files.hook.chroot \
+	config/hooks/normal/0150-remove-mdadm-configuration.hook.chroot \
+	config/hooks/normal/0160-remove-openssh-server-host-keys.hook.chroot \
+	config/hooks/normal/0170-remove-python-py.hook.chroot \
+	config/hooks/normal/0180-remove-systemd-machine-id.hook.chroot \
+	config/hooks/normal/0190-remove-temporary-files.hook.chroot \
+	config/hooks/normal/0195-remove-ssl-cert-snakeoil.hook.chroot \
+	config/hooks/normal/0200-remove-udev-persistent-cd-rules.hook.chroot \
+	config/hooks/normal/0300-remove-udev-persistent-net-rules.hook.chroot \
+	config/hooks/normal/0400-update-apt-file-cache.hook.chroot \
+	config/hooks/normal/0410-update-apt-xapian-index.hook.chroot \
+	config/hooks/normal/0420-update-glx-alternative.hook.chroot \
+	config/hooks/normal/0430-update-mlocate-database.hook.chroot \
+	config/hooks/normal/0440-update-nvidia-alternative.hook.chroot \
+	config/hooks/live/0010-disable-kexec-tools.hook.chroot \
+	config/hooks/live/0050-disable-sysvinit-tmpfs.hook.chroot \
+	config/package-lists/live.list.chroot

@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "I: running $0"
+dpkg --add-architecture i386
+apt update

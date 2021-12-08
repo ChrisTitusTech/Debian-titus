@@ -1,0 +1,34 @@
+#!/bin/sh
+# live-build configuration script
+# see 'man lb config'
+
+lb config noauto \
+--apt-recommends false \
+--apt-indices false \
+--architectures amd64 \
+--archive-areas 'main contrib non-free' \
+--backports false \
+--security false \
+--updates false \
+--source false \
+--binary-filesystem ext4 \
+--binary-images iso-hybrid \
+--checksums sha256 \
+--clean \
+--debconf-frontend noninteractive \
+--debian-installer live \
+--debian-installer-distribution bookworm \
+--debian-installer-gui true \
+--debootstrap-options "--include=apt-transport-https,ca-certificates,openssl" \
+--distribution sid \
+--firmware-binary true \
+--firmware-chroot true \
+--initramfs live-boot \
+--iso-publisher dlc \
+--iso-volume dlc-3.0.0 \
+--linux-packages "linux-image linux-headers" \
+--bootappend-live "boot=live config splash" \
+--memtest memtest86+ \
+--win32-loader true
+
+"${@}"

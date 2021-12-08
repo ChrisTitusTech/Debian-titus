@@ -1,0 +1,16 @@
+! Packages Priority important
+unzip
+picom
+bspwm
+polybar
+sddm
+rofi
+kitty
+thunar
+flameshot
+neofetch
+sxhkd
+git
+lxpolkit
+lxappearance
+xorg

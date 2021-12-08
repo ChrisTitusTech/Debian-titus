@@ -1,0 +1,10 @@
+# CONSOLE KEYBOARD CONFIGURATION FILE
+
+# Consult the keyboard(5) manual page.
+
+XKBMODEL="pc104"
+XKBLAYOUT="fr"
+XKBVARIANT="oss"
+XKBOPTIONS=""
+
+BACKSPACE="guess"

@@ -1,0 +1,2 @@
+--add-metadata
+--output '%(title)s-%(id)s-%(extractor)s.%(ext)s'

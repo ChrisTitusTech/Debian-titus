@@ -1,0 +1,5 @@
+# Debian packages/debconf preconfiguration (preseed) file
+# https://wiki.debian.org/DebianInstaller/Preseed
+
+#Disable world-readable home dirs
+adduser adduser/homedir-permission boolean false

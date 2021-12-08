@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfwm4" version="1.0">
+  <property name="general" type="empty">
+    <property name="button_layout" type="string" value="O|SHMC"/>
+    <property name="cycle_apps_only" type="bool" value="false"/>
+    <property name="cycle_draw_frame" type="bool" value="true"/>
+    <property name="cycle_hidden" type="bool" value="true"/>
+    <property name="cycle_minimum" type="bool" value="true"/>
+    <property name="cycle_preview" type="bool" value="true"/>
+    <property name="cycle_tabwin_mode" type="int" value="0"/>
+    <property name="cycle_workspaces" type="bool" value="false"/>
+    <property name="double_click_action" type="string" value="maximize"/>
+    <property name="easy_click" type="string" value="Alt"/>
+    <property name="focus_hint" type="bool" value="true"/>
+    <property name="focus_new" type="bool" value="true"/>
+    <property name="mousewheel_rollup" type="bool" value="false"/>
+    <property name="prevent_focus_stealing" type="bool" value="false"/>
+    <property name="repeat_urgent_blink" type="bool" value="true"/>
+    <property name="restore_on_move" type="bool" value="true"/>
+    <property name="scroll_workspaces" type="bool" value="false"/>
+    <property name="show_app_icon" type="bool" value="true"/>
+    <property name="show_dock_shadow" type="bool" value="false"/>
+    <property name="show_frame_shadow" type="bool" value="false"/>
+    <property name="snap_to_border" type="bool" value="true"/>
+    <property name="snap_to_windows" type="bool" value="true"/>
+    <property name="snap_width" type="int" value="8"/>
+    <property name="sync_to_vblank" type="bool" value="true"/>
+    <property name="theme" type="string" value="Arc-Darker"/>
+    <property name="title_alignment" type="string" value="left"/>
+    <property name="title_font" type="string" value="Roboto 10"/>
+    <property name="title_horizontal_offset" type="int" value="0"/>
+    <property name="title_shadow_active" type="string" value="false"/>
+    <property name="titleless_maximize" type="bool" value="false"/>
+    <property name="unredirect_overlays" type="bool" value="true"/>
+    <property name="urgent_blink" type="bool" value="true"/>
+    <property name="use_compositing" type="bool" value="true"/>
+    <property name="zoom_desktop" type="bool" value="true"/>
+    <property name="workspace_count" type="int" value="2"/>
+    <property name="workspace_names" type="array">
+      <value type="string" value="Workspace 1"/>
+      <value type="string" value="Workspace 2"/>
+    </property>
+  </property>
+</channel>

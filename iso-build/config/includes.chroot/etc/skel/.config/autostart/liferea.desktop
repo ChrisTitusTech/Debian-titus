@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=liferea --mainwindow-state=iconified
+NotShowIn=GNOME
+Hidden=true
+Name[fr_FR]=Lecteur de Flux Liferea
+Name=Lecteur de Flux Liferea
+Comment[fr_FR]=Lecteur de nouvelles RSS
+Comment=Lecteur de nouvelles RSS
+Icon=liferea

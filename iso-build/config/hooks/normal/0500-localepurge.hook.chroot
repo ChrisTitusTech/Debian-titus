@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "I: running $0"
+locale-gen --keep-existing
+
+# USE_DPKG must be disabled in localepurge configuration before running manually, else it will do nothing
+sed -i 's/^USE_DPKG/#USE_DPKG/' /etc/locale.nopurge
+localepurge
+
+# re-enable USE_DPKG
+sed -i 's/^#USE_DPKG/USE_DPKG/' /etc/locale.nopurge

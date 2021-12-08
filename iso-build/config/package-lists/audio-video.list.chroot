@@ -1,0 +1,173 @@
+#Title: Audio/video
+#Section: Video players
+#Description: vlc
+#Description: mpv
+libdvd-pkg
+mpv
+#Alt: freetuxtv
+#Alt: gnome-dvb-client
+#Alt: gnome-mpv
+#Alt: kodi
+#Alt: mpv
+#Alt: parole
+#Alt: smplayer
+#Alt: subdownloader
+#Alt: totem
+#Alt: totem-plugins
+#Alt: vlc-plugin-svg
+celluloid
+#zapping # buster only
+#vlc-plugin-zvbi # buster only
+#libdvdread4 # buster only
+#vlc-plugin-vlsub # buster only
+
+
+#Section: Music players/library managers
+#Description: quodlibet
+quodlibet
+exfalso
+libgpod-common
+libgpod4
+#python-cddb # buster only
+#python-feedparser # buster only
+#python-musicbrainzngs # buster only
+#python-pyinotify # buster only
+sox
+#Alt: gnome-music
+#Alt: rhythmbox
+#Alt: rhythmbox-plugins
+#Alt: clementine
+#Alt: audacious
+#Alt: audacious-plugins
+#Alt: projectm-pulseaudio
+#Alt: mpd
+#Alt: sonata
+#Alt: ario
+#Alt: cantata
+#Alt: ncmpcpp
+#Alt: mpc
+#Alt: moc
+#Alt: cmus
+#Alt: moc-ffmpeg-plugin
+#Alt: mpg123
+#Alt: beets
+#Alt: cowbell
+#Alt: easytag
+#Alt: puddletag
+#Alt: eyed3
+#Alt: kid3
+#Alt: picard
+#Alt: mussort
+#Alt: vagalume
+#Alt: gpodder
+#Alt: go-mtpfs
+#Alt: gtkpod
+#Alt: playerctl
+#Alt: streamtuner2
+#gmusicbrowser # buster only
+#musique # buster only
+#radiotray # buster
+
+
+#Section: Webcam
+#Description: cheese
+#Alt: guvcview
+#Alt: gnome-video-effects-frei0r
+#Alt: v4l2loopback-dkms
+#Alt: v4l2loopback-utils
+#Alt: kamoso
+#Alt: zoneminder
+
+#Section: Screen recording/screencasting
+#Description: obs-studio
+#Description: vokoscreen
+#Alt: kazam
+#Alt: byzanz
+#Alt: obs-studio
+#Alt: simplescreenrecorder
+#gtk-recordmydesktop # buster only
+#key-mon # buster only
+
+
+#Section: Media conversion/codecs
+#Description: qwinff
+qwinff
+ffmpeg
+flac
+gstreamer1.0-alsa
+gstreamer1.0-libav
+gstreamer1.0-plugins-bad
+gstreamer1.0-plugins-base
+gstreamer1.0-plugins-good
+gstreamer1.0-plugins-ugly
+gstreamer1.0-pulseaudio
+gstreamer1.0-tools
+gstreamer1.0-x
+lame
+libmp3lame0
+libxvidcore4
+musepack-tools
+mediainfo
+media-player-info
+#Alt: handbrake
+#Alt: mp3splt
+#Alt: oggvideotools
+#Alt: ogmrip
+#Alt: ogmrip-plugins
+#Alt: soundconverter
+#Alt: winff
+#Alt: winff-doc
+#Alt: winff-qt
+#Alt: x264
+#Alt: x265
+#Alt: qhimdtransfer
+#Alt: minidisc-utils
+#Alt: mat
+#Alt: ffmpegfs
+
+
+#Section: Audio CD extraction
+##Description: asunder
+#Alt: asunder
+#Alt: sound-juicer
+#Alt: goobox
+#Alt: ripperx
+#Alt: xcfa
+
+
+#Section: Subtitles
+subliminal
+#Alt: subtitleeditor
+#Alt: gaupol
+#Alt: gnome-subtitles
+
+#Section: Audio recording/editing
+#Description: audacity
+#Description: gnome-sound-recorder
+#Alt: gwc
+#Alt: gjacktransport
+
+##Section: Lighting
+#Alt: qlcplus
+
+
+#Section: Audio system
+#Description: pulseaudio
+pipewire
+wireplumber
+pipewire-pulse
+pavucontrol
+kmod
+alsa-oss
+alsa-tools
+alsa-utils
+libasound2-plugins
+oss-compat
+alsa-firmware-loaders
+rtkit
+#Alt: pasystray
+#Alt: paprefs
+#Alt: pnmixer
+#Alt: pamix
+#Alt: pulseaudio-equalizer
+#Alt: libasound2-plugin-equal

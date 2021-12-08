@@ -1,0 +1,27 @@
+[color]
+	ui = true
+[merge]
+	tool = meld
+[alias]
+	st = status
+	a = add
+	ch = checkout
+	b = branch -a
+	c = commit
+	ru = remote update
+	l = "log --graph --abbrev-commit --decorate --date=relative --pretty=oneline --all"
+	d = diff
+    wd = diff --color-words=.
+	sl = shortlog
+	gc = gc --aggressive
+	thanks = shortlog -sne
+
+# force GPG signing of all commits and tags
+#[commit]
+#    gpgSign = true
+#[tag]
+#    forceSignAnnotated = true
+#[gpg]
+#    program = gpg
+#[user]
+#    signingKey = EE73FC8FD71E3CC83606FDF361B23168A539DBBD

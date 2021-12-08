@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Name[fr]=Navigateur Web Firefox
+Comment=Browse the World Wide Web
+Comment[fr]=Naviguer sur le Web
+GenericName=Web Browser
+GenericName[fr]=Navigateur Web
+Exec=firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=firefox
+StartupNotify=true

@@ -1,0 +1,42 @@
+#!/usr/bin/make
+# please update doc/md/packages/extras.md after adding changes to this file
+WGET=wget --continue --no-verbose --show-progress --directory-prefix=cache/downloads/
+
+all: download_extra
+
+clean:
+	rm -rvf config/packages.chroot/
+	rm -rvf cache/downloads
+	rm -rf config/includes.chroot/usr/lib/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+
+clean_all: clean
+	rm -rvf cache/downloads/
+
+
+download_extra: clean
+	# Download additional software from third-party repository (https://nodiscc.gitlab.io/toolbox)
+	# TODO use the APT repository at build time, but disable it in the final chroot/image
+	# TODO file ITPs on bugs.debian.org
+	mkdir -p cache/downloads/ config/packages.chroot/
+
+	# EXTRA https://github.com/az0/cleanerml
+	$(WGET) https://nodiscc.gitlab.io/toolbox/pool/main/b/bleachbit-cleanerml/bleachbit-cleanerml_0.0.1~git0+5bc2961_all.deb
+	cp cache/downloads/bleachbit-cleanerml_0.0.1~git0+5bc2961_all.deb config/packages.chroot/
+
+	# EXTRA https://github.com/yt-dlp/yt-dlp
+	$(WGET) https://nodiscc.gitlab.io/toolbox/pool/main/y/yt-dlp/yt-dlp_2021.12.01_amd64.deb
+	cp cache/downloads/yt-dlp_2021.12.01_amd64.deb config/packages.chroot/
+
+	# https://github.com/EionRobb/pidgin-opensteamworks/
+	$(WGET) https://nodiscc.gitlab.io/toolbox/pool/main/p/pidgin-opensteamworks/pidgin-opensteamworks_1.7-1_amd64.deb
+	cp cache/downloads/pidgin-opensteamworks_1.7-1_amd64.deb config/packages.chroot/
+
+	# EXTRA https://github.com/nodiscc/user.js
+	$(WGET) https://nodiscc.gitlab.io/toolbox/pool/main/u/user.js/user.js_0.3.3-1_all.deb
+	cp cache/downloads/user.js_0.3.3-1_all.deb config/packages.chroot/
+
+	# EXTRA https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/
+	# EXTRA https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/
+	mkdir -p config/includes.chroot/usr/lib/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+	$(WGET) https://addons.mozilla.org/firefox/downloads/file/3465157/keepassxc_browser-latest-fx.xpi -O config/includes.chroot/usr/lib/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/keepassxc-browser@keepassxc.org.xpi
+	$(WGET) https://addons.mozilla.org/firefox/downloads/file/3711829/cookie_autodelete-3.6.0-an+fx.xpi -O config/includes.chroot/usr/lib/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/CookieAutoDelete@kennydo.com.xpi

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<pref version='1' name='/'>
+
+	<pref name='purple'>
+		<pref name='away'>
+			<pref name='idle_reporting' type='string' value='none'/>
+			<pref name='away_when_idle' type='bool' value='0'/>
+			<pref name='mins_before_away' type='int' value='5'/>
+			<pref name='auto_reply' type='string' value='never'/>
+		</pref>
+
+		<pref name='savedstatus'>
+			<pref name='startup_current_status' type='bool' value='1'/>
+		</pref>
+
+		<pref name='conversations'>
+			<pref name='im'>
+				<pref name='send_typing' type='bool' value='1'/>
+			</pref>
+		</pref>
+
+		<pref name='logging'>
+			<pref name='log_ims' type='bool' value='1'/>
+			<pref name='log_chats' type='bool' value='1'/>
+			<pref name='log_system' type='bool' value='1'/>
+			<pref name='format' type='string' value='html'/>
+		</pref>
+	</pref>
+
+	<pref name='plugins'>
+		<pref name='core'>
+			<pref name='statenotify'>
+				<pref name='notify_away' type='bool' value='1'/>
+				<pref name='notify_idle' type='bool' value='0'/>
+				<pref name='notify_signon' type='bool' value='1'/>
+			</pref>
+
+			<pref name='newline'>
+				<pref name='im' type='bool' value='1'/>
+				<pref name='chat' type='bool' value='1'/>
+			</pref>
+		</pref>
+
+		<pref name='lopl'/>
+			<pref name='gtk'>
+				<pref name='libnotify'>
+					<pref name='newmsg' type='bool' value='1'/>
+					<pref name='blocked' type='bool' value='1'/>
+					<pref name='newconvonly' type='bool' value='0'/>
+					<pref name='signon' type='bool' value='0'/>
+					<pref name='signoff' type='bool' value='0'/>
+					<pref name='only_available' type='bool' value='1'/>
+					<pref name='auto_loaded' type='bool' value='1'/>
+				</pref>
+			</pref>
+		</pref>
+
+	<pref name='pidgin'>
+		<pref name='browsers'>
+			<pref name='browser' type='string' value='custom'/>
+			<pref name='place' type='int' value='0'/>
+			<pref name='manual_command' type='string' value='gnome-www-browser %s'/>
+		</pref>
+
+		<pref name='plugins'>
+			<pref name='loaded' type='pathlist'>
+				<item value='/usr/lib/purple-2/statenotify.so'/>
+				<item value='/usr/lib/pidgin/gnome-keyring.so'/>
+				<item value='/usr/lib/pidgin/history.so'/>
+				<item value='/usr/lib/purple-2/irchelper.so'/>
+				<item value='/usr/lib/purple-2/irc-more.so'/>
+				<item value='/usr/lib/purple-2/joinpart.so'/>
+				<item value='/usr/lib/pidgin/lastseen.so'/>
+				<item value='/usr/lib/pidgin/notify.so'/>
+				<item value='/usr/lib/pidgin/pidgin-otr.so'/>
+				<item value='/usr/lib/purple-2/pidgin-libnotify.so'/>
+				<item value='/usr/lib/pidgin/sendbutton.so'/>
+				<item value='/usr/lib/pidgin/vvconfig.so'/>
+			</pref>
+		</pref>
+
+		<pref name='sound'>
+			<pref name='mute' type='bool' value='1'/>
+			<pref name='method' type='string' value='automatic'/>
+			<pref name='volume' type='int' value='40'/>
+		</pref>
+
+		<pref name='blist'>
+			<pref name='show_buddy_icons' type='bool' value='1'/>
+			<pref name='show_empty_groups' type='bool' value='0'/>
+			<pref name='show_idle_time' type='bool' value='1'/>
+			<pref name='show_offline_buddies' type='bool' value='1'/>
+			<pref name='show_protocol_icons' type='bool' value='1'/>
+			<pref name='list_visible' type='bool' value='0'/>
+			<pref name='list_maximized' type='bool' value='0'/>
+			<pref name='sort_type' type='string' value='status'/>
+		</pref>
+
+		<pref name='conversations'>
+			<pref name='toolbar'>
+				<pref name='wide' type='bool' value='0'/>
+			</pref>
+		</pref>
+	</pref>
+
+	<pref name='OTR'>
+		<pref name='enabled' type='bool' value='1'/>
+		<pref name='automatic' type='bool' value='0'/>
+		<pref name='onlyprivate' type='bool' value='0'/>
+		<pref name='avoidloggingotr' type='bool' value='1'/>
+	</pref>
+
+</pref>

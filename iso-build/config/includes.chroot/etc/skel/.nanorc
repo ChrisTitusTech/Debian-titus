@@ -1,0 +1,3 @@
+#set tabstospaces
+set tabsize 4
+# include ~/.nano/*.nanorc

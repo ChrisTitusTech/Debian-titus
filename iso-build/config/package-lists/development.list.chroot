@@ -1,0 +1,163 @@
+#Title: Development
+#Section: Version control
+#Description: meld
+#Description: gource
+git
+meld
+gource
+colordiff
+dwdiff
+cloc
+#Alt: gitg
+#Alt: fossil
+#Alt: ghi
+#Alt: git-mediawiki
+#Alt: git-sizer
+#Alt: svn2git
+#Alt: github-backup
+#Alt: hub
+#Alt: mercurial
+#Alt: myrepos
+#Alt: python3-gitlab
+#Alt: subversion
+#Alt: tig
+#Alt: icdiff
+#Alt: qgit
+#Alt: git-secrets
+
+#Section: Shell & basic utilities
+bash
+autojump
+bash-completion
+pv
+sed
+util-linux
+util-linux-locales
+whiptail
+moreutils
+less
+dialog
+manpages
+manpages-dev
+#Alt: shellcheck
+#Alt: asciinema
+#Alt: undistract-me
+#Alt: inotify-tools
+#Alt: lr
+#Alt: ack
+#Alt: bd
+#Alt: beep
+#Alt: command-not-found
+#Alt: detox
+#Alt: grc
+#Alt: pv
+#Alt: reptyr
+#Alt: source-highlight
+#Alt: tmux
+#Alt: ttyrec
+#Alt: fasd
+#Alt: pdd
+#Alt: termrec
+#Alt: ripgrep
+#Alt: retry
+
+
+#Section: Parsers/converters/documentation generators
+jq
+xmlstarlet
+aha
+groff
+dos2unix
+#Alt: pandoc
+#Alt: man2html-base
+#Alt: txt2tags
+#Alt: mkdocs
+#Alt: csvkit
+#Alt: roffit
+#Alt: archmage
+#Alt: html2text
+
+#Section: Packaging
+debhelper
+autoconf
+devscripts
+dh-make
+equivs
+build-essential
+checkinstall
+fakeroot
+debconf-utils
+lintian
+git-buildpackage
+#Alt: apt-build
+#Alt: python3-stdeb
+#Alt: pypi2deb
+#Alt: dgit
+#Alt: aptly
+#lintian-brush # buster only
+
+#Section: Debuggers
+gdb
+
+#Section: Python
+python3-all-dev
+python3-setuptools
+python3-wheel
+python3-pip
+python3-venv
+
+#Section: Live system
+live-build
+#Alt: debootstrap
+#Alt: live-config-doc
+#Alt: live-manual-pdf
+#Alt: live-manual-html
+#Alt: debian-handbook
+#Alt: blends-tasks
+#Alt: live-task-lxde
+#Alt: live-task-base
+#Alt: live-task-cinnamon
+#Alt: live-task-extra
+#Alt: live-task-gnome
+#Alt: live-task-kde
+#Alt: live-task-localisation
+#Alt: live-task-localisation-desktop
+#Alt: live-task-mate
+#Alt: live-task-recommended
+#Alt: live-task-xfce
+
+#Section: Hex editors
+#Alt: wxhexeditor
+#Alt: hexcurse
+#Alt: dhex
+#Alt: bless
+
+#Section: Translation/localization
+#Alt: poedit
+
+#Section: Game development
+#Alt: godot3
+
+#Section: Ruby
+#Alt: ruby-dev
+
+#Section: HTML/CC/JS
+#Alt: csstidy
+#Alt: sqlite3
+#Alt: vera
+#Alt: nodejs
+#Alt: npm
+#Alt: jsbeautifier
+#webcheck # buster only
+
+#Section: PHP
+#Alt: php-cli
+
+#Section: Android
+#Alt: android-sdk
+#Alt: android-sdk-platform-tools-common
+#Alt: fastboot
+#Alt: adb
+#Alt: fastboot
+#Alt: scrcpy
+#gplaycli # bookworm only

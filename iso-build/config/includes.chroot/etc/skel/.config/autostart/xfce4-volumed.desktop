@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Terminal=false
+Name=XFCE Volume Daemon
+Name[fr_FR]=Démon de volume XFCE
+Comment=Daemon managing the volume multimedia keys and displaying volume notifications
+Comment[fr_FR]=Démon gérant les touches multimédia liées au volume et affichant des notifications de volume
+Exec=xfce4-volumed
+OnlyShowIn=XFCE;

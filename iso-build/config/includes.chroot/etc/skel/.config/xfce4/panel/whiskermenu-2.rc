@@ -1,0 +1,66 @@
+favorites=exo-file-manager.desktop,thunderbird.desktop,firefox.desktop,pidgin.desktop,backintime-qt4.desktop,org.xfce.Catfish.desktop,io.github.quodlibet.QuodLibet.desktop,exo-terminal-emulator.desktop,org.gnome.Packages.desktop
+button-title=Applications
+button-icon=distributor-logo-debian
+button-single-row=true
+show-button-title=false
+show-button-icon=true
+launcher-show-name=true
+launcher-show-description=true
+launcher-show-tooltip=true
+item-icon-size=0
+hover-switch-category=false
+category-icon-size=0
+load-hierarchy=false
+recent-items-max=10
+favorites-in-recent=true
+display-recent-default=false
+position-search-alternate=true
+position-commands-alternate=true
+position-categories-alternate=true
+menu-width=464
+menu-height=510
+menu-opacity=100
+command-settings=xfce4-settings-manager
+show-command-settings=true
+command-lockscreen=xflock4
+show-command-lockscreen=true
+command-switchuser=gdmflexiserver
+show-command-switchuser=false
+command-logout=xfce4-session-logout
+show-command-logout=true
+command-menueditor=menulibre
+show-command-menueditor=true
+command-profile=users-admin
+show-command-profile=false
+search-actions=5
+
+[action0]
+name=Manual pages
+pattern=man
+command=exo-open --launch TerminalEmulator man %s
+regex=false
+
+[action1]
+name=Web search (Duckduckgo)
+pattern=?
+command=exo-open --launch WebBrowser https://duckduckgo.com/?q=%u
+regex=false
+
+[action2]
+name=Wikipedia
+pattern=!w
+command=exo-open --launch WebBrowser https://wikipedia.org/wiki/%u
+regex=false
+
+[action3]
+name=Open location
+pattern=^(file|http|https):\\/\\/(.*)$
+command=exo-open \\0
+regex=true
+
+[action4]
+name=Search files
+pattern=/
+command=catfish --start / "%u"
+regex=false
+

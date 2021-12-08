@@ -1,0 +1,22 @@
+[Configuration]
+FontName=Hack 9
+MiscAlwaysShowTabs=FALSE
+MiscCursorBlinks=FALSE
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+MiscDefaultGeometry=100x24
+MiscInheritGeometry=FALSE
+MiscMenubarDefault=TRUE
+MiscMouseAutohide=FALSE
+MiscToolbarDefault=FALSE
+MiscConfirmClose=TRUE
+MiscCycleTabs=TRUE
+MiscTabCloseButtons=TRUE
+MiscTabCloseMiddleClick=TRUE
+MiscTabPosition=GTK_POS_TOP
+MiscHighlightUrls=TRUE
+ScrollingOnOutput=FALSE
+ColorForeground=#e5e5e5
+ColorBackground=#1d1d1d
+ColorCursor=#e5e5e5
+ColorPalette=#121212;#a35b66;#99ab6f;#ca9733;#495d6e;#825969;#839191;#E0E0E0;#2e3436;#ab6b74;#acb792;#ccaa69;#687987;#977381;#98A4A4;#e5e5e5
+

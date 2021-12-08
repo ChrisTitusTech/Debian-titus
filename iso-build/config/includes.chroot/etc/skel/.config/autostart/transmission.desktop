@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=transmission-gtk -m
+NotShowIn=GNOME
+Name[fr_FR]=Client Bittorrent Transmission
+Name=Client Bittorrent Transmission
+Comment[fr_FR]=Partager et recevoir des fichiers via Bittorrent
+Comment=Share and receive files via Bittorrent
+Icon=transmission
+Hidden=true

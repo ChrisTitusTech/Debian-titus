@@ -1,0 +1,2 @@
+# Uncomment to receive updates fro packages installed from https://nodiscc.gitlab.io/toolbox
+#deb https://nodiscc.gitlab.io/toolbox/ bullseye main

@@ -1,0 +1,71 @@
+[header_maps]
+
+[__config__]
+version = 0
+
+[player]
+replaygain = false
+time_remaining = false
+
+[settings]
+jump = true
+columns = ~rating,~#track,~title~version,artist,~album~discsubtitle,~#disc,genre,~#length,~#bitrate,~filename,~#lastplayed,~format
+ratings = 5
+repeat = False
+default_rating = 0.0
+
+[browsers]
+panes = artist	<album>	genre	~rating
+rating_click = true
+color = true
+album_covers = true
+
+[memory]
+browser = Paned
+maximized = 0
+quodlibet_maximized = 4
+open_browsers = 
+order = inorder
+queue = True
+queue_expanded = False
+shuffle = False
+shufflequeue = false
+songlist = true
+sortby = 0~#track
+volume = 1.0
+
+[editing]
+alltags = true
+save_to_songs = true
+
+[plugins]
+active_plugins = Title Case
+	Burn CD
+	ExportMeta
+	Browse Folders
+	MusicBrainz lookup
+	Alarm Clock
+	Picture Saver
+	CDDB lookup
+	Download Album art
+	Tray Icon
+	filterbrowser
+	Equalizer
+	SeekBar
+	Export to HTML
+	Duplicates
+	mpris
+	Notify
+	Playlist Export
+	Force Write
+	Search artist in Wikipedia
+browsefolders = thunar
+cover_fn = folder.jpg
+icon_tooltip = <album|<album~discnumber~part~tracknumber~title~version>|<artist~title~version>>
+k3b = xfburn
+notify_show_notifications = all
+wikipedia = en
+
+[library]
+refresh_on_start = true
+

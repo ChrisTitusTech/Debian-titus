@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding=UTF-8"?>
+
+<channel name="ristretto" version="1.0">
+  <property name="window" type="empty">
+    <property name="navigationbar" type="empty">
+      <property name="position" type="string" value="left"/>
+    </property>
+    <property name="statusbar" type="empty">
+      <property name="show" type="bool" value="false"/>
+    </property>
+    <property name="thumbnails" type="empty">
+      <property name="size" type="uint" value="4"/>
+      <property name="show" type="bool" value="false"/>
+    </property>
+  </property>
+</channel>

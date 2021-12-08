@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "I: running $0"
+apt -y purge linux-image-5.10.0-9-amd64
+

@@ -1,0 +1,296 @@
+#Title: System
+
+#Section: Package management
+#Description: gnome-packagekit
+#Description: synaptic
+apt-listchanges
+apt-transport-https
+aptitude
+debconf-utils
+debian-archive-keyring
+debian-keyring
+debsecan
+debsums
+packagekit
+packagekit-tools
+reportbug
+software-properties-gtk
+synaptic
+unattended-upgrades
+vrms
+#Alt: appstream-generator
+#Alt: apt-config-auto-update
+#Alt: apt-file
+#Alt: apt-forktracer
+#Alt: apt-listbugs
+#Alt: aptitude-doc-fr
+#Alt: debian-security-support
+#Alt: deborphan
+#Alt: debtree
+#Alt: gnome-software
+#Alt: gstreamer1.0-packagekit
+#Alt: needrestart
+#Alt: packagekit-command-not-found
+#Alt: packagekit-gtk3-module
+#Alt: extrepo
+#pk-update-icon # buster only
+
+#Section: Task management/monitoring
+#Description: xfce4-taskmanager
+xfce4-taskmanager
+htop
+iotop
+lm-sensors
+hddtemp
+inxi
+lsof
+strace
+memtest86+
+#Alt: gnome-system-monitor
+#Alt: screenfetch
+#screentest # bookworm only
+#Alt: hardinfo
+#Alt: cputool
+#Alt: usbview
+#Alt: stress
+#Alt: stressapptest
+#Alt: lshw
+#Alt: lshw-gtk
+#Alt: bonnie++
+#Alt: x86info
+#Alt: memtester
+#Alt: dstat
+#Alt: sysstat
+#Alt: cacti
+#Alt: hwloc
+#Alt: memlockd
+#Alt: read-edid
+#Alt: cpu-x
+#glances # buster only
+
+
+#Section: Backup
+#Screenshot: deja-dup
+#Description: deja-dup
+deja-dup
+#Alt: backintime-qt4
+#Alt: tmfs
+#Alt: duplicity
+#Alt: rdiff-backup
+#Alt: grsync
+#Alt: unison
+#Alt: unison-gtk
+#Alt: rsync
+#Alt: rsbackup
+#Alt: fsarchiver
+#Alt: backupninja
+#Alt: duply
+#rsnapshot # buster only
+
+#Section: Disk management
+#Description: gnome-disk-utility
+#Description: gparted
+#Description: baobab
+gparted
+baobab
+ncdu
+dfc
+smartmontools
+mtools
+gdisk
+parted
+hdparm
+sdparm
+dosfstools
+hfsprogs
+ntfs-3g
+kpartx
+xorriso
+lvm2
+#Alt: gsmartcontrol
+#Alt: fsarchiver
+#Alt: partclone
+#Alt: pmount
+#Alt: bilibop-udev
+#Alt: ecryptfs-utils
+#Alt: partimage
+#Alt: forensics-full
+#Alt: steghide
+#Alt: gdmap
+#Alt: clonezilla
+#Alt: exfatprogs
+#Alt: crazydiskinfo
+#Alt: disk-filltest
+#disk-manager # buster only
+
+#Section: data recovery
+#Description: testdisk
+testdisk
+#Alt: foremost
+#Alt: scalpel
+#Alt: gddrescue
+#Alt: ddrescueview
+#Alt: extundelete
+#Alt: fatcat
+#Alt: safecopy
+
+#Section: File cleaners/linters
+#Description: bleachbit
+bleachbit
+localepurge
+#fslint # buster only
+
+#Section: Log viewers
+#Description: lnav
+lnav
+colortail
+#Alt: gnome-logs
+#Alt: glogg
+#Alt: logtop
+#Alt: since
+#Alt: multitail
+
+
+#Section: Virtualization
+#Description: virt-manager
+virt-manager
+virtinst
+virt-viewer
+ebtables
+dnsmasq-base
+libvirt-daemon-system
+gir1.2-spiceclientgtk-3.0
+qemu-system-x86
+qemu-system-arm
+qemu-utils
+#virt-top # buster only
+netcat-openbsd
+#Alt: virt-what
+#Alt: libguestfs-tools
+#Alt: lxc
+#Alt: gnome-boxes
+#Alt: lxc-templates
+#Alt: docker.io
+#Alt: docker-registry
+#Alt: docker-doc
+#Alt: anbox
+#Alt: vagrant
+#Alt: schroot
+#virt-sandbox # buster only
+
+#Section: Configuration management
+#Alt: ansible
+
+#Section: Java
+default-jre
+
+#Section: Display manager/screen locker
+#Description: lightdm
+sddm
+i3lock-fancy
+#Alt: accountsservice
+#Alt: slim
+#Alt: gdm3
+#Alt: arctica-greeter
+#Alt: xsecurelock
+#Alt: xscreensaver
+#Alt: xscreensaver-data-extra
+#Alt: xscreensaver-gl
+#Alt: xscreensaver-gl-extra
+
+#Section: Boot screen
+plymouth
+plymouth-x11
+plymouth-themes
+
+#Section: Scheduling
+at
+
+#Section: Desktop performance
+haveged
+#Alt: oomd
+#Alt: irqbalance
+#Alt: preload
+#ulatencyd # buster only
+
+
+#Section: Security & sandboxing
+libpam-tmpdir
+sudo
+#Alt: apparmor-notify
+#Alt: apparmor-profiles-extra
+#Alt: doas
+
+#Section: Time
+chrony
+#Alt: ntp
+
+#Section: Display
+mesa-utils
+libgl1-mesa-dri
+va-driver-all
+xinput
+xorg
+xinit
+xfonts-base
+xfonts-scalable
+xfonts-75dpi
+xfonts-100dpi
+xserver-xorg
+xserver-xorg-input-all
+xserver-xorg-input-wacom
+xserver-xorg-input-aiptek
+xserver-xorg-input-elographics
+xserver-xorg-input-joystick
+xserver-xorg-input-kbd
+xserver-xorg-input-mouse
+xserver-xorg-input-mutouch
+xserver-xorg-input-multitouch
+xserver-xorg-input-synaptics
+xserver-xorg-video-all
+xserver-xorg-video-intel
+xfonts-base
+hwdata
+nvidia-driver
+
+#Section: Kernel/boot/init
+#if ARCHITECTURES amd64
+linux-headers-amd64
+#endif
+#if ARCHITECTURES i386
+linux-headers-686:i386
+#endif
+module-assistant
+dkms
+build-essential
+systemd
+os-prober
+initramfs-tools
+console-setup
+user-setup
+libpam-systemd
+#Alt: kexec-tools
+#Alt: kthresher
+
+#Section: Firmwares
+firmware-linux-free
+firmware-linux-nonfree
+amd64-microcode
+intel-microcode
+
+#Section: Hardware-specific packages
+#Alt: driverctl
+#Alt: pommed
+#Alt: lomoco
+#Alt: wmgui
+#Alt: mbpfan
+#Alt: usbmuxd
+#Alt: fprintd
+
+#Section: Live system components
+live-boot
+live-config
+live-config-systemd
+user-setup
+live-tools
+eject

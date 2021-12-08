@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-desktop" version="1.0">
+  <property name="backdrop" type="empty">
+    <property name="screen0" type="empty">
+      <property name="monitor0" type="empty">
+        <property name="image-path" type="string" value="/usr/share/backgrounds/homeworld-darker-3840x2160.png"/>
+        <property name="image-show" type="bool" value="true"/>
+        <property name="last-single-image" type="string" value="/usr/share/backgrounds/homeworld-darker-3840x2160.png"/>
+        <property name="backdrop-cycle-enable" type="bool" value="true"/>
+        <property name="backdrop-cycle-timer" type="uint" value="600"/>
+        <property name="image-style" type="int" value="5"/>
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/backgrounds/homeworld-darker-3840x2160.png"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/backgrounds/homeworld-darker-3840x2160.png"/>
+        </property>
+      </property>
+    </property>
+  </property>
+  <property name="desktop-icons" type="empty">
+    <property name="icon-size" type="uint" value="32"/>
+    <property name="file-icons" type="empty">
+      <property name="show-filesystem" type="bool" value="false"/>
+    </property>
+  </property>
+  <property name="desktop-menu" type="empty">
+    <property name="show" type="bool" value="false"/>
+  </property>
+</channel>

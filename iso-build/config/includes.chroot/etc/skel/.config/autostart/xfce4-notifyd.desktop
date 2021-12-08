@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+TryExec=/usr/lib/i386-linux-gnu/xfce4/notifyd/xfce4-notifyd
+Exec=/usr/lib/i386-linux-gnu/xfce4/notifyd/xfce4-notifyd
+Name[fr_FR]=Notifications du bureau XFCE
+Name=XFCE Desktop Notifications
+Comment[fr_FR]=Afficher les bulles de notification
+Comment=Display notification popups
+Icon=gtk-info

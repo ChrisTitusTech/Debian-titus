@@ -1,0 +1,13 @@
+# Enable DNSSec
+#conf-file=/usr/share/dnsmasq-base/trust-anchors.conf
+#dnssec
+
+# Use custom forwarders instead of the name server acquired by DHCP
+#server=1.2.3.4
+#server=2.3.4.5
+
+# Force using resolvers in the specified order instead of "intelligently"
+#strict-order
+
+# Delegate resolution of a specific domain to libvirt's dnsmasq service
+#server=/mydomain.host/10.0.0.1

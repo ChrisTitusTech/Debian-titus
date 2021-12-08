@@ -1,0 +1,3 @@
+[qt]
+# Ask for network policy at start (boolean)
+qt-privacy-ask=0

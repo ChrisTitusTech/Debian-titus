@@ -1,0 +1,93 @@
+#! /bin/sh
+
+# Variable Defines
+color0=#3B4252
+color4=#D8DEE9
+
+# Make sure sxhkd is always running
+while :; do
+    if pgrep -x sxhkd > /dev/null; then
+        true
+    else
+        sxhkd &
+    fi
+    sleep 5
+done &
+
+#Clean lingering programs when reloaded
+"$HOME/.config/bspwm/clean" &
+
+#Fix Mouse curoor on startup 
+xsetroot -cursor_name left_ptr
+
+#Monitor Config
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+
+#BSPWM Config
+bspc config border_width        0
+bspc config top_padding         50
+bspc config right_padding       9
+bspc config left_padding        9
+bspc config bottom_padding      9
+bspc config window_gap          2
+bspc config top_monocle_padding  0
+bspc config right_monocle_padding 0
+bspc config left_monocle_padding 0
+bspc config bottom_monocle_padding 0
+
+bspc config focused_border_color "$color0"
+bspc config normal_border_color  "$color0"
+bspc config active_border_color  "$color0"
+bspc config presel_feedback_color "$color4"
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true  
+bspc config gapless_monocle      false
+bspc config focus_follows_pointer true
+bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
+
+#Application Rules
+bspc rule -a Gimp desktop='^8' follow=on
+bspc rule -a wine desktop='^7' state=floating follow=on
+bspc rule -a variety state=floating
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a Discord desktop='^6'
+bspc rule -a synergy desktop='^9'
+
+#Auto-Start
+bspc desktop -f ^9
+sleep 0.50
+urxvtc &
+bash ~/.config/polybar/launch.sh &
+lxpolkit &
+picom --config "$HOME/.config/bspwm/picom.conf" &
+variety &
+/usr/bin/synergys -f -d ERROR -n studio-pc -c /etc/synergy.conf -a 192.168.69.10:24800 --log ~/.local/log/synergy.log &
+flameshot &
+synergypid=0
+while [ $synergypid -eq 0 ] 
+do
+   sleep 1
+   synergypid=$(pidof synergy)
+done
+sleep 0.5
+pingresult=$(ping -c 1 1.1.1.1 > /dev/null ; echo $?)
+while [ $pingresult -ne 0 ]; do
+  pingresult=$(ping -c 1 1.1.1.1 > /dev/null ; echo $?)
+done
+bspc desktop -f ^6
+/bin/Discord &
+discordpid=0
+while [ $discordpid -eq 0 ] 
+do
+   sleep 1
+   discordpid=$(pidof Discord)
+done
+sleep 2.5
+bspc desktop -f ^1
+bash ~/Git
+
+# Extra Specific Files for Titus (DELETE ME)
+sudo /home/titus/GitHub/Debian-titus/dotfiles/bspwm/mount-drives.sh

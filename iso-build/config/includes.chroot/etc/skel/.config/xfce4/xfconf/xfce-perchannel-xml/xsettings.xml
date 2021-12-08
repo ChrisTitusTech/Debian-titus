@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xsettings" version="1.0">
+  <property name="Net" type="empty">
+    <property name="ThemeName" type="string" value="Arc-Darker"/>
+    <property name="IconThemeName" type="string" value="Papirus-Dark"/>
+  </property>
+  <property name="Xft" type="empty">
+    <property name="DPI" type="empty"/>
+    <property name="Antialias" type="int" value="1"/>
+    <property name="Hinting" type="int" value="-1"/>
+    <property name="HintStyle" type="string" value="hintfull"/>
+    <property name="RGBA" type="string" value="none"/>
+  </property>
+  <property name="Gtk" type="empty">
+    <property name="FontName" type="string" value="Roboto 10"/>
+    <property name="ToolbarStyle" type="string" value="icons"/>
+    <property name="ToolbarIconSize" type="int" value="3"/>
+    <property name="MenuImages" type="bool" value="true"/>
+    <property name="ButtonImages" type="bool" value="true"/>
+    <property name="MenuBarAccel" type="string" value="F10"/>
+    <property name="CursorThemeName" type="string" value="Adwaita"/>
+  </property>
+</channel>
