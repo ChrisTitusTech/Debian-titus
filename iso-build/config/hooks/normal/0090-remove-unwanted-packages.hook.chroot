@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "I: running $0"
-aptitude -y purge exim4-base nfs-common rpcbind

@@ -1,3 +1,0 @@
-// Don't auto-install 'recommended' packages
-// https://wiki.debian.org/AptPreferences
-Apt::Install-Recommends "false";

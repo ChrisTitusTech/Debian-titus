@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "I: running $0"
-update-alternatives --set x-session-manager /usr/bin/xfce4-session

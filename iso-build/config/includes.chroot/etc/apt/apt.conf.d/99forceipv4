@@ -1,3 +1,0 @@
-// Force contacting APT repositories over IPv4
-// https://wiki.debian.org/AptPreferences
-Acquire::ForceIPv4 "true";
