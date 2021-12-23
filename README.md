@@ -6,7 +6,7 @@ _This install changes Debian to the SID (Dev) Branch_
 
 ### Download Debian non-free netinstall
 
-Use the following Debian ISO as the base <https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.1.0+nonfree/amd64/iso-cd/>
+Use the following Debian ISO as the base <https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/>
 
 *do NOT grab the EDU download and this includes non-free and firmware*
 ### Base Stuff - Root
