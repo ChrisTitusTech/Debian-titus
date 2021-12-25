@@ -546,7 +546,7 @@ interface = enp5s0
 interval = 3.0
 
 ;format-connected-underline = ${xrdb:color2}
-format-connected-prefix = ""
+format-connected-prefix = " "
 format-connected-background = ${colors.shade16}
 ;format-connected-padding = 1
 format-connected-prefix-foreground = ${colors.shade5}
