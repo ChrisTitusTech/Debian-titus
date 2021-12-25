@@ -290,7 +290,7 @@ label-maxlen = 120
 label-empty = Desktop
 
 format = <label>
-format-prefix = ""
+format-prefix = "" "
 format-prefix-foreground = ${colors.shade14}
 format-foreground = ${colors.shade14}
 ;format-background = ${colors.shade16}
