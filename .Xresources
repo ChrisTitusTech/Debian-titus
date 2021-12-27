@@ -22,7 +22,7 @@ URxvt.italicFont: xft:FONT:style=Italic:size=FONT_SIZE:antialias=true, xft:ICON:
 URxvt.boldItalicFont: xft:FONT:style=Bold Italic:size=FONT_SIZE:antialias=true, xft:ICON:size=ICON_SIZE:antialias=true, xft:NERD_FONT:size=NERD_SIZE:antialias=true, xft:EMOJI:size=EMOJI_SIZE:antialias=true
 
 !Colors
-#include "/home/titus/.Xnord"
+#include ".Xnord"
 !*.font: xft:FiraCode Nerd Font Mono:style=Medium:size=14:antialias=true
 
 URxvt.depth:                    32
