@@ -6,21 +6,6 @@
  *
  */
 
-configuration {
-
-	font: "Envy Code R 10";
-	width: 30;
-	line-margin: 10;
-	lines: 6;
-	columns: 2;
-
-    display-ssh:    "";
-    display-run:    "";
-    display-drun:   "";
-    display-window: "";
-    display-combi:  "";
-    show-icons:     true;
-}
 
 * {
 	nord0: #2e3440;
@@ -46,20 +31,20 @@ configuration {
     foreground:  @nord9;
     backlight:   #ccffeedd;
     background-color:  transparent;
-    
+
     highlight:     underline bold #eceff4;
 
     transparent: rgba(46,52,64,0);
 }
 
 window {
-	location:	 west;
-	anchor:		 west;
+    location: center;
+    anchor:   center;
     transparency: "screenshot";
     padding: 10px;
     border:  0px;
     border-radius: 6px;
-    sidebar-mode:    true;
+
     background-color: @transparent;
     spacing: 0;
     children:  [mainbox];
@@ -95,7 +80,7 @@ entry, prompt, case-indicator {
 }
 
 prompt {
-    margin: 0px 0.3em 0em 0em ;
+    margin: 0px 1em 0em 0em ;
 }
 
 listview {
