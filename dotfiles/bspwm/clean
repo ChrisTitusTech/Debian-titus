@@ -24,6 +24,7 @@ done
 for app in "${KILL[@]}"
 do
     kill -9 $(pidof $app)
+    while _is_running $app; do sleep 1; done
 done
 
 # Start new instances

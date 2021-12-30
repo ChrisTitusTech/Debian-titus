@@ -1,5 +1,12 @@
 #! /bin/sh
 
+#Clean lingering programs when reloaded
+"$HOME/.config/bspwm/clean" &
+
+#Start polybar first
+bash ~/.config/polybar/launch.sh &
+feh --bg-fill ~/Pictures/background.jpg &
+
 # Variable Defines
 color0=#3B4252
 color4=#D8DEE9
@@ -14,14 +21,15 @@ while :; do
     sleep 5
 done &
 
-#Clean lingering programs when reloaded
-"$HOME/.config/bspwm/clean" &
-
 #Fix Mouse curoor on startup 
 xsetroot -cursor_name left_ptr
 
+#Set Keyboard Layout
+setxkbmap -layout us
+
 #Monitor Config
-bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor DisplayPort-1 -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor HDMI-A-0 -d 11
 
 #BSPWM Config
 bspc config border_width        0
@@ -60,10 +68,8 @@ bspc rule -a synergy desktop='^9'
 bspc desktop -f ^9
 sleep 0.50
 urxvtc &
-bash ~/.config/polybar/launch.sh &
 lxpolkit &
 picom --config "$HOME/.config/bspwm/picom.conf" &
-variety &
 /usr/bin/synergys -f -d ERROR -n studio-pc -c /etc/synergy.conf -a 192.168.69.10:24800 --log ~/.local/log/synergy.log &
 flameshot &
 synergypid=0
