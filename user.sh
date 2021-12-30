@@ -1,5 +1,7 @@
 #!/bin/bash
 
+WDL=$(pwd)
+
 # Appearance pacakges
 sudo apt install papirus-icon-theme lxappearance fonts-noto-color-emoji fonts-firacode fonts-font-awesome libqt5svg5 qml-module-qtquick-controls
 
@@ -7,9 +9,9 @@ sudo apt install papirus-icon-theme lxappearance fonts-noto-color-emoji fonts-fi
 mkdir -p $HOME/.themes $HOME/.fonts $HOME/.config
 
 # Fira Code Nerd Font variant needed
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+wget -nc https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 unzip FiraCode.zip -d $HOME/.fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+wget -nc https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
 unzip Meslo.zip -d $HOME/.fonts   
 fc-cache -vf
 
@@ -24,7 +26,7 @@ cd Layan-cursors
 sudo ./install.sh
 
 echo "RUN LXAPPEARANCE"
-cd ../
+cd $WDL
 cp .Xresources $HOME
 cp .Xnord $HOME
 cp -R dotfiles/* $HOME/.config/
