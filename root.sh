@@ -6,6 +6,7 @@ cp sources.list /etc/apt/sources.list
 
 
 username=$(id -u -n 1000)
+builddir=$(pwd)
 
 # Add Custom Titus Rofi Deb Package
 dpkg -i 'Custom Packages/rofi_1.7.0-1_amd64.deb'
@@ -28,7 +29,8 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v1.1.0/Meslo.zip
 unzip Meslo.zip -d /usr/share/fonts
 fc-cache -vf
 
-
+cd $builddir
+mkdir -p /home/$username/.config
 cp .Xresources /home/$username
 cp .Xnord /home/$username
 cp -R dotfiles/* /home/$username/.config/
