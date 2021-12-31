@@ -28,8 +28,7 @@ xsetroot -cursor_name left_ptr
 setxkbmap -layout us
 
 #Monitor Config
-bspc monitor DisplayPort-1 -d 1 2 3 4 5 6 7 8 9 10
-bspc monitor HDMI-A-0 -d 11
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 #BSPWM Config
 bspc config border_width        0
