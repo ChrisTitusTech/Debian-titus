@@ -431,6 +431,10 @@ format-charging-background = ${colors.shade16}
 format-charging-padding-right = 5
 format-charging-overline = ${colors.background}
 format-charging-underline = ${colors.background}
+format-full = <label-full>
+format-full-background = ${colors.shade16}
+format-full-overline = ${colors.background}
+format-full-underline = ${colors.background}
 
 ; Available tags:
 ;   <label-discharging> (default)
