@@ -37,3 +37,4 @@ cp .Xnord /home/$username
 cp -R dotfiles/* /home/$username/.config/
 chown -R $username:$username /home/$username
 tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
+cp dotfiles/sddm.conf /etc/sddm.conf 
