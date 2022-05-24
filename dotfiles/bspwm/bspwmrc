@@ -59,9 +59,7 @@ urxvtc &
 bash ~/.config/polybar/launch.sh &
 lxpolkit &
 picom --config $HOME/.config/bspwm/picom.conf &
-variety &
-/usr/bin/synergys -f -d ERROR -n studio-pc -c /etc/synergy.conf -a 192.168.69.10:24800 --log ~/.local/log/synergy.log &
-flameshot &
+
 bspc desktop -f ^1
 bash ~/.config/bspwm/servicemonitor.sh media-data.mount
 bash ~/.config/bspwm/servicemonitor.sh media-drive.mount
