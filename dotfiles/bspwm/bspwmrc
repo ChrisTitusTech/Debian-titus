@@ -1,4 +1,6 @@
 #! /bin/sh
+bash ~/.config/polybar/launch.sh &
+xbindkeys &
 
 # Make sure sxhkd is always running
 while :; do
@@ -53,10 +55,6 @@ bspc rule -a Discord desktop='^9'
 bspc rule -a synergy desktop='^10'
 
 #Auto-Start
-bspc desktop -f ^9
-sleep 0.50
-urxvtc &
-bash ~/.config/polybar/launch.sh &
 lxpolkit &
 picom --config $HOME/.config/bspwm/picom.conf &
 
