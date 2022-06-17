@@ -58,9 +58,6 @@ bspc rule -a Discord desktop='^9'
 bspc rule -a synergy desktop='^10'
 
 #Auto-Start
-lxpolkit &
-picom --config $HOME/.config/bspwm/picom.conf &
-
 bspc desktop -f ^1
 bash ~/.config/bspwm/servicemonitor.sh media-data.mount
 bash ~/.config/bspwm/servicemonitor.sh media-drive.mount
