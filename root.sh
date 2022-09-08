@@ -2,7 +2,7 @@
 
 # Change Debian to SID Branch
 cp /etc/apt/sources.list /etc/apt/sources.list.bak
-cp sources.list /etc/apt/sources.list 
+cp sources.list /etc/apt/sources.list
 
 
 username=$(id -u -n 1000)
@@ -31,8 +31,10 @@ fc-cache -vf
 
 cd $builddir
 mkdir -p /home/$username/.config
+mkdir -p /usr/share/sddm/themes
 cp .Xresources /home/$username
 cp .Xnord /home/$username
 cp -R dotfiles/* /home/$username/.config/
 chown -R $username:$username /home/$username
-
+tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
+cp dotfiles/sddm.conf /etc/sddm.conf 
