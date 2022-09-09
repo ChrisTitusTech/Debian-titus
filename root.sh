@@ -16,7 +16,7 @@ apt update
 
 # Add base packages
 apt install unzip picom bspwm polybar sddm rofi kitty thunar flameshot neofetch sxhkd git lxpolkit lxappearance xorg -y
-apt install papirus-icon-theme lxappearance fonts-noto-color-emoji fonts-firacode fonts-font-awesome libqt5svg5 qml-module-qtquick-controls -y
+apt install papirus-icon-theme feh lxappearance fonts-noto-color-emoji fonts-firacode fonts-font-awesome libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 
 # Download Nordic Theme
 cd /usr/share/themes/
@@ -31,10 +31,12 @@ fc-cache -vf
 
 cd $builddir
 mkdir -p /home/$username/.config
+mkdir -p /home/$username/Pictures
 mkdir -p /usr/share/sddm/themes
 cp .Xresources /home/$username
 cp .Xnord /home/$username
 cp -R dotfiles/* /home/$username/.config/
+cp background.jpg /home/$username/Pictures/
 chown -R $username:$username /home/$username
 tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
 cp dotfiles/sddm.conf /etc/sddm.conf 
