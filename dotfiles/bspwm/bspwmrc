@@ -59,6 +59,7 @@ bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
 bspc rule -a Brave-browser desktop='^1' follow=on
 bspc rule -a Gimp desktop='^8' follow=on
 bspc rule -a wine desktop='^7' state=floating follow=on
+bspc rule -a yad state=floating follow=on
 bspc rule -a variety state=floating
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
@@ -73,30 +74,13 @@ sleep 0.50
 urxvtc &
 lxpolkit &
 picom --config "$HOME/.config/bspwm/picom.conf" &
-/usr/bin/synergys -f -d ERROR -n studio-pc -c /etc/synergy.conf -a 192.168.69.10:24800 --log ~/.local/log/synergy.log &
 flameshot &
-synergypid=0
-while [ $synergypid -eq 0 ] 
-do
-   sleep 1
-   synergypid=$(pidof synergy)
-done
-sleep 0.5
+synology-drive &
+# Ping result used to wait for internet
 pingresult=$(ping -c 1 1.1.1.1 > /dev/null ; echo $?)
 while [ $pingresult -ne 0 ]; do
   pingresult=$(ping -c 1 1.1.1.1 > /dev/null ; echo $?)
 done
-bspc desktop -f ^6
-/bin/Discord &
-discordpid=0
-while [ $discordpid -eq 0 ] 
-do
-   sleep 1
-   discordpid=$(pidof Discord)
-done
-sleep 2.5
-bspc desktop -f ^1
-bash ~/Git
 
-# Extra Specific Files for Titus (DELETE ME)
-sudo /home/titus/GitHub/Debian-titus/dotfiles/bspwm/mount-drives.sh
+bspc desktop -f ^1
+
