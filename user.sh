@@ -11,6 +11,6 @@ cd "$HOME/build"
 git clone https://github.com/vinceliuice/Layan-cursors
 cd Layan-cursors
 sudo ./install.sh
-mkdir -p /usr/share/icons/default/
+sudo mkdir -p /usr/share/icons/default/
 echo "[Icon Theme]" | sudo tee /usr/share/icons/default/index.theme > /dev/null
 echo "Inherits=Layan-cursors" | sudo tee -a /usr/share/icons/default/index.theme > /dev/null
