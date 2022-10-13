@@ -1,0 +1,8 @@
+# GIMP gimp-text-tool options
+
+(foreground (color-rgb 1 1 1))
+(palette "Color History")
+(font "Built Titling Bold")
+(font-size 300)
+
+# end of gimp-text-tool options

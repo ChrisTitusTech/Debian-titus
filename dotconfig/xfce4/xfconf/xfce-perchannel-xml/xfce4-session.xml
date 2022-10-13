@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-session" version="1.0">
+  <property name="splash" type="empty">
+    <property name="Engine" type="empty"/>
+    <property name="engines" type="empty">
+      <property name="simple" type="empty">
+        <property name="Font" type="empty"/>
+        <property name="BgColor" type="empty"/>
+        <property name="FgColor" type="empty"/>
+        <property name="Image" type="empty"/>
+      </property>
+    </property>
+  </property>
+  <property name="shutdown" type="empty">
+    <property name="LockScreen" type="bool" value="false"/>
+  </property>
+</channel>
