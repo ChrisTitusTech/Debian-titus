@@ -9,15 +9,11 @@ _This install changes Debian to the SID (Dev) Branch_
 Use the following Debian ISO as the base <https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/>
 
 *do NOT grab the EDU download and this includes non-free and firmware*
-### Base Stuff - Root
+### To install:
 
-_Run as ROOT_
 ```
-sudo su
-./root.sh
+git clone https://github.com/ChrisTitusTech/debian-titus
+cd debian-titus
+sudo ./install.sh
 ```
 
-### Theme Stuff - User Level
- ```
- ./user.sh
- ```
