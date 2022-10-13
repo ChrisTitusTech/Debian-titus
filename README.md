@@ -12,7 +12,7 @@ Use the following Debian ISO as the base <https://cdimage.debian.org/cdimage/uno
 ### To install:
 
 ```
-git clone https://github.com/djoma98/debian-titus
+git clone https://github.com/ChrisTitusTech/debian-titus
 cd debian-titus
 sudo ./install.sh
 ```
