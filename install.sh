@@ -35,7 +35,7 @@ mv /home/$username/.config/sddm.conf /etc/sddm.conf
 # Installing sugar-candy dependencies
 apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 # Installing Essential Programs 
-apt install bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad pulseaudio pavucontrol -y
+apt install bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
 # Installing Other less important Programs
 apt install psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji -y
 
@@ -50,6 +50,7 @@ git clone https://github.com/EliverLara/Nordic.git
 # Installing fonts
 cd $builddir
 apt install fonts-font-awesome
+chown $username /home/$username/.fonts/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 unzip FiraCode.zip -d /home/$username/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
