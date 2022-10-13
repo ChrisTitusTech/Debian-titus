@@ -14,10 +14,6 @@ cp sources.list /etc/apt/sources.list
 username=$(id -u -n 1000)
 builddir=$(pwd)
 
-# Add Custom Sddm Deb Package
-dpkg -i 'deb-packages/sddm_0.19.0-4_amd64.deb'
-apt install -f
-
 # Update packages list and update system
 apt update
 apt upgrade -y
@@ -25,6 +21,7 @@ apt upgrade -y
 # Making .config and Moving config files and background to Pictures
 cd $builddir
 mkdir -p /home/$username/.config
+mkdir -p /home/$username/.fonts
 mkdir -p /home/$username/Pictures
 mkdir -p /usr/share/sddm/themes
 cp .Xresources /home/$username
@@ -43,13 +40,16 @@ apt install psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fon
 #Installing sugar-candy dependencies
 libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 
+# Add Custom Sddm Deb Package
+dpkg -i 'deb-packages/sddm_0.19.0-4_amd64.deb'
+apt install -f -y
+
 # Download Nordic Theme
 cd /usr/share/themes/
 git clone https://github.com/EliverLara/Nordic.git
 
 # Installing fonts
 apt install fonts-font-awesome
-mkdir -p /home/$username/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 unzip FiraCode.zip -d /home/$username/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
@@ -71,6 +71,7 @@ rm -rf Nordzy-cursors
 # Install brave-browser
 git clone https://github.com/djoma98/debian-brave
 cd debian-brave
+chmod +x install.sh
 ./install.sh
 cd $builddir
 rm -rf debian-brave
