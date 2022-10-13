@@ -10,7 +10,6 @@ fi
 cp /etc/apt/sources.list /etc/apt/sources.list.bak
 cp sources.list /etc/apt/sources.list
 
-
 username=$(id -u -n 1000)
 builddir=$(pwd)
 
@@ -33,12 +32,12 @@ chown -R $username:$username /home/$username
 tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
 mv /home/$username/.config/sddm.conf /etc/sddm.conf
 
+# Installing sugar-candy dependencies
+libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 # Installing Essential Programs 
 apt install bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad pulseaudio pavucontrol -y
 # Installing Other less important Programs
 apt install psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji -y
-#Installing sugar-candy dependencies
-libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 
 # Add Custom Sddm Deb Package
 dpkg -i 'deb-packages/sddm_0.19.0-4_amd64.deb'
