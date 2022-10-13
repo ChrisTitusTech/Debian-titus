@@ -39,7 +39,7 @@ mv /home/$username/.config/sddm.conf /etc/sddm.conf
 # Installing Essential Programs 
 apt install sddm bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad pulseaudio pavucontrol -y
 # Installing Other less important Programs
-apt install mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji -y
+apt install psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji -y
 #Installing sugar-candy dependencies
 libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 
