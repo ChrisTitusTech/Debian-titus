@@ -37,7 +37,7 @@ apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 
 # Installing Essential Programs 
 apt install bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
 # Installing Other less important Programs
-apt install psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji -y
+apt neofetch flameshot install psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji -y
 
 # Add Custom Sddm Deb Package
 dpkg -i 'deb-packages/sddm_0.19.0-4_amd64.deb'
@@ -77,3 +77,6 @@ chmod +x install.sh
 cd $builddir
 rm -rf debian-brave
 
+# Enable graphical login and change target from CLI to GUI
+systemctl enable sddm
+systemctl set-default graphical.target
