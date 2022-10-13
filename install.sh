@@ -33,7 +33,7 @@ tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
 mv /home/$username/.config/sddm.conf /etc/sddm.conf
 
 # Installing sugar-candy dependencies
-libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
+apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 # Installing Essential Programs 
 apt install bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad pulseaudio pavucontrol -y
 # Installing Other less important Programs
