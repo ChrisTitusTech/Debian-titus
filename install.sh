@@ -15,7 +15,7 @@ username=$(id -u -n 1000)
 builddir=$(pwd)
 
 # Add Custom Sddm Deb Package
-dpkg -i 'Custom Packages/sddm_0.19.0-4_amd64.deb'
+dpkg -i 'deb-packages/sddm_0.19.0-4_amd64.deb'
 apt install -f
 
 # Update packages list and update system
