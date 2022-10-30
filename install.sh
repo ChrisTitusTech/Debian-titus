@@ -35,13 +35,9 @@ mv /home/$username/.config/sddm.conf /etc/sddm.conf
 # Installing sugar-candy dependencies
 apt install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 # Installing Essential Programs 
-apt install bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
+apt install feh bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
 # Installing Other less important Programs
-apt install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji -y
-
-# Add Custom Sddm Deb Package
-dpkg -i 'deb-packages/sddm_0.19.0-4_amd64.deb'
-apt install -f -y
+apt install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji sddm -y
 
 # Download Nordic Theme
 cd /usr/share/themes/
@@ -70,12 +66,11 @@ cd $builddir
 rm -rf Nordzy-cursors
 
 # Install brave-browser
-git clone https://github.com/djoma98/debian-brave
-cd debian-brave
-chmod +x install.sh
-./install.sh
-cd $builddir
-rm -rf debian-brave
+sudo apt install apt-transport-https curl -y
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser -y
 
 # Enable graphical login and change target from CLI to GUI
 systemctl enable sddm
