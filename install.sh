@@ -117,4 +117,3 @@ git clone https://github.com/ChrisTitusTech/mybash
 cd mybash
 bash setup.sh
 cd $builddir
-rm -rf mybash
