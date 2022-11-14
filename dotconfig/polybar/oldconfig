@@ -46,7 +46,7 @@ shade18 = ${xrdb:color0}
 
 [bar/bar]
 width = 100%
-height = 32
+height = 40
 offset-x = 0
 offset-y = 0
 ;radius = 18.0
@@ -56,30 +56,29 @@ bottom = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 8
+overline-size = 5
 underline-size = 5
 line-color = ${colors.background}
 
-border-bottom-size = 1
+border-bottom-size = 3
 border-color = ${colors.shade0}
 
-;padding-left = 1
-;padding-right = 1
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = FiraCode Nerd Font:style=Regular:size=12;4
+font-0 = Fira Code:style=Regular:size=15;4
 font-1 = Font Awesome 5 Brands:size=15;4
 font-2 = Font Awesome 5 Free Solid:size=15;4
 font-3 = FiraCode Nerd Font Mono:style=Regular:size=18;4
 font-4 = Font Awesome 5 Free Solid:size=18;4
 font-5 = Noto Color Emoji:scale=20;4
-font-6 = Material Design Icons:scale=20;4
 
-modules-left = launcher sep left bspwm right sep left bsplayout bspmode right sep left pulseaudio right sep powermenu 
+modules-left = launcher sep left bspwm right sep left bsplayout bspmode right
 modules-center = xwindow
-modules-right = sep left battery backlight bluetooth dunst right sep left eth wlan right sep left time right sep 
+modules-right = left pulseaudio right sep left battery backlight bluetooth vpn dunst redshift right sep left eth wlan right sep left time right sep powermenu
 
 override-redirect = true
 wm-restack = bspwm
@@ -92,13 +91,25 @@ cursor-click = pointer
 enable-ipc = true
 pseudo-transparency = false
 
-# Tray Settings
+[bar/tray]
+;monitor = DP-4
+width = 1%
+height = 26
+offset-x = 95%
+offset-y = 5%
+bottom = true
+
+modules-center = void
+background = ${colors.background}
+
 tray-position = right
 tray-padding = 5
 tray-background = ${colors.shade16}
-tray-maxsize = 24
+tray-maxsize = 26
 tray-detached = false
 
+wm-restack = bspwm
+override-redirect = true
 
 #####################################################################
 #
@@ -145,8 +156,8 @@ type = internal/bspwm
 format = <label-state>
 pin-workspaces = false
 enable-scroll = true
-;label-separator = ""
-;label-separator-background = ${colors.shade16}
+label-separator = "  "
+label-separator-background = ${colors.shade16}
 
 label-focused-overline = ${colors.background}
 label-occupied-overline = ${colors.background}
@@ -172,22 +183,22 @@ ws-icon-8 = 9;
 ws-icon-9 = 10;
 
 label-focused = %icon%
-label-focused-padding = 1
+;label-focused-padding = 1
 label-focused-foreground = ${colors.shade3}
 label-focused-background = ${colors.shade16}
 
 label-occupied = %icon%
-label-occupied-padding = 1
+;label-occupied-padding = 1
 label-occupied-background = ${colors.shade16}
 label-occupied-foreground = ${colors.shade7}
 
 label-urgent = %icon%
-label-urgent-padding = 1
+;label-urgent-padding = 1
 label-urgent-background = ${colors.shade16}
 label-urgent-foreground = ${colors.shade1}
 
 label-empty = %icon%
-label-empty-padding = 1
+;label-empty-padding = 1
 label-empty-background = ${colors.shade16}
 label-empty-foreground = ${colors.shade4}
 
@@ -267,7 +278,7 @@ label-marked-padding-left = 1
 [module/launcher]
 type = custom/text
 content-background = ${colors.background}
-content-foreground = ${colors.shade4}
+content-foreground = ${colors.shade17}
 content-padding = 1
 click-left = "rofi -show drun"
 content = ""
@@ -275,11 +286,11 @@ content = ""
 [module/xwindow]
 type = internal/xwindow
 label = %title%
-label-maxlen = 60
+label-maxlen = 120
 label-empty = Desktop
 
 format = <label>
-format-prefix = ""
+format-prefix = " "
 format-prefix-foreground = ${colors.shade14}
 format-foreground = ${colors.shade14}
 ;format-background = ${colors.shade16}
@@ -288,13 +299,25 @@ format-underline = ${colors.background}
 
 [module/bluetooth]
 type = custom/script
-;exec = ~/.config/polybar/scripts/bluetooth.sh
+;exec = ~/.config/polybar/polybar-scripts/bluetooth.sh
 tail = true
-;click-left = ~/.config/polybar/scripts/bluetooth.sh --toggle &
+;click-left = ~/.config/polybar/polybar-scripts/bluetooth.sh --toggle &
 format-foreground = ${colors.shade5}
 format-background = ${colors.shade16}
 format-overline = ${colors.background}
 format-underline = ${colors.background}
+
+[module/vpn]
+type = custom/ipc
+initial = 2
+format-foreground = ${colors.shade5}
+format-background = ${colors.shade16}
+format-overline = ${colors.background}
+
+format-underline = ${colors.background}
+
+hook-0 = echo "%{A1:sudo pkill openconnect && polybar-msg hook vpn 2:}%{F#a3be8c} %{F-}%{A}" &
+hook-1 = echo "%{A1:pass sshthanos | sudo openconnect vpn.som.umaryland.edu -b -q --user=cullen.ross --authgroup SOM-Multifactor --passwd-on-stdin --servercert pin-sha256\:zWuWUmGaQEWraG+Xvv6uF58rrupSRmqCzeNioSDEaaI= && polybar-msg hook vpn 1:}%{F#3b4252} %{F-}%{A}" &
 
 [module/dunst]
 type = custom/ipc
@@ -305,14 +328,14 @@ format-overline = ${colors.background}
 format-underline = ${colors.background}
 ;format-padding = 1
 
-hook-0 = echo "%{A1:notify-send "dunstctl set-paused toggle" && polybar-msg hook dunst 2:}  %{A}" &
-hook-1 = echo "%{A1:notify-send "dunstctl set-paused toggle" && polybar-msg hook dunst 1:}  %{A}" &
+hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:}  %{A}" &
+hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}  %{A}" &
 
 click-middle = rofi_notif_center.sh &
 
 [module/redshift]
 type = custom/script
-exec = $HOME/.config/polybar/scripts/redshift.sh
+exec = $HOME/.config/polybar/polybar-scripts/redshift.sh
 interval = 5
 
 format-background = ${colors.shade16}
@@ -320,10 +343,10 @@ format-overline = ${colors.background}
 format-underline = ${colors.background}
 
 click-left = ~/.config/qtile/toggle_redshift.sh
-;exec = source ~/.config/polybar/scripts/env.sh && ~/.config/polybar/scripts/redshift_scroll.sh temperature 
-;click-left = source ~/.config/polybar/scripts/env.sh && ~/.config/polybar/scripts/redshift_scroll.sh toggle 
-;scroll-up = source ~/.config/polybar/scripts/env.sh && ~/.config/polybar/scripts/redshift_scroll.sh increase
-;scroll-down = source ~/.config/polybar/scripts/env.sh && ~/.config/polybar/scripts/redshift_scroll.sh decrease
+;exec = source ~/.config/polybar/polybar-scripts/env.sh && ~/.config/polybar/polybar-scripts/redshift_scroll.sh temperature 
+;click-left = source ~/.config/polybar/polybar-scripts/env.sh && ~/.config/polybar/polybar-scripts/redshift_scroll.sh toggle 
+;scroll-up = source ~/.config/polybar/polybar-scripts/env.sh && ~/.config/polybar/polybar-scripts/redshift_scroll.sh increase
+;scroll-down = source ~/.config/polybar/polybar-scripts/env.sh && ~/.config/polybar/polybar-scripts/redshift_scroll.sh decrease
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -408,8 +431,7 @@ format-charging-background = ${colors.shade16}
 format-charging-padding-right = 5
 format-charging-overline = ${colors.background}
 format-charging-underline = ${colors.background}
-format-full = <ramp-capacity> <label-full>
-format-full-foreground = ${colors.shade3}
+format-full = <label-full>
 format-full-background = ${colors.shade16}
 format-full-overline = ${colors.background}
 format-full-underline = ${colors.background}
@@ -449,7 +471,7 @@ label-discharging = %percentage%%
 ; Available tokens:
 ;   %percentage% (default) - is set to 100 if full-at is reached
 ;   %percentage_raw%
-label-full = %percentage%%
+label-full = 
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
@@ -487,6 +509,7 @@ type = internal/backlight
 card = intel_backlight
 
 enable-scroll = true
+
 format = <ramp><label>
 ;%{T8}<bar>%{T-}
 
@@ -523,60 +546,53 @@ bar-empty-underline = ${colors.background}
 
 [module/eth]
 type = internal/network
-interface-type = wired
-interface = eth0
+interface = enp66s0
 interval = 3.0
 
-format-connected-underline = ${xrdb:color2}
-;format-connected-underline = ${colors.background}
-format-connected-overline = ${colors.background}
+;format-connected-underline = ${xrdb:color2}
 format-connected-prefix = " "
 format-connected-background = ${colors.shade16}
-format-connected-padding = 1
+;format-connected-padding = 1
 format-connected-prefix-foreground = ${colors.shade5}
-
 label-connected = %{A1:setsid -f connman-gtk:}ETH%{A}
-label-connected-overline = ${colors.background}
-label-connected-underline = ${colors.background}
-label-disconnected-underline = ${colors.background}
-label-disconnected-overline = ${colors.background}
 
-format-disconnected-overline = ${colors.background}
-format-disconnected-underline = ${colors.background}
-format-disconnected = 󰈂
-format-disconnected-background = ${colors.shade16}
-format-disconnected-foreground = ${colors.shade3}
-format-disconnected-padding = 0
-
-[module/wlan]
-type = internal/network
-interface-type = wireless
-interface = wlan0
-interval = 3.0
-
-format-connected-background = ${colors.shade16}
-format-connected = %{A1:$HOME/.config/polybar/scripts/nmcli-rofi.sh:}<ramp-signal> <label-connected>%{A}
-format-connected-padding-left = 1
-label-connected = %{A1:setsid -f connman-gtk:}%essid%%{A} 
-
-click-left = "~/.config/polybar/scripts/nmcli-rofi.sh &"
-
-label-connected-foreground = ${colors.shade5}
 label-connected-overline = ${colors.background}
 label-disconnected-overline = ${colors.background}
 label-connected-underline = ${colors.background}
 label-disconnected-underline = ${colors.background}
+
 format-connected-overline = ${colors.background}
 format-disconnected-overline = ${colors.background}
 format-connected-underline = ${colors.background}
 format-disconnected-underline = ${colors.background}
 
-format-disconnected = %{A1:$HOME/.config/polybar/scripts/nmcli-rofi.sh:}<label-disconnected>%{A}
-format-disconnected-background = ${colors.shade16}
+format-disconnected =
 
-label-disconnected = "󰖪 "
-label-disconnected-background = ${colors.shade16}
-label-disconnected-foreground = ${colors.shade3}
+[module/wlan]
+type = internal/network
+interface = wlp68s0
+interval = 3.0
+
+format-connected-background = ${colors.shade16}
+format-connected = <ramp-signal> <label-connected>
+;format-connected-padding-left = 1
+label-connected = %{A1:setsid -f connman-gtk:}%essid%%{A}
+label-connected-foreground = ${colors.shade5}
+
+label-connected-overline = ${colors.background}
+label-disconnected-overline = ${colors.background}
+label-connected-underline = ${colors.background}
+label-disconnected-underline = ${colors.background}
+
+format-connected-overline = ${colors.background}
+format-disconnected-overline = ${colors.background}
+format-connected-underline = ${colors.background}
+format-disconnected-underline = ${colors.background}
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${colors.shade16}
+;format-disconnected-padding = 1
+label-disconnected = 
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -584,7 +600,6 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.shade5}
-ramp-signal-padding = 1
 
 [module/date]
 type = internal/date
@@ -604,7 +619,7 @@ format-overline = ${colors.background}
 format-underline = ${colors.background}
 
 ;label = %date%
-label = %{A1:~/.config/polybar/scripts/cal-popup.sh --popup &:}%date%%{A}
+label = %{A1:~/.config/polybar/polybar-scripts/cal-popup.sh --popup &:}%date%%{A}
 
 [module/time]
 type = internal/date
@@ -620,14 +635,14 @@ format-prefix = " "
 
 format-overline = ${colors.background}
 format-underline = ${colors.background}
-;label = %{A1:notify-send -a Date -i /usr/share/icons/hicolor/64x64/apps/office-calendar.svg -u normal -t 3000 "$(date "+%A, %B %d %Y")":}%time%%{A}
-label = %{A1:~/.config/polybar/scripts/cal-popup.sh --popup &:}%time%%{A}
-click-left = "~/.config/polybar/scripts/cal-popup.sh --popup &"
+;label = %{A1:notify-send -a Date -i /usr/share/icons/Nord-Icon/64x64/apps/office-calendar.svg -u normal -t 3000 "$(date "+%A, %B %d %Y")":}%time%%{A}
+label = %{A1:~/.config/polybar/polybar-scripts/cal-popup.sh --popup &:}%time%%{A}
+;click-left = "~/.config/polybar/polybar-scripts/cal-popup.sh --popup &"
 
 [module/powermenu]
 type = custom/text
 content-background = ${colors.background}
-content-foreground = ${colors.shade4}
+content-foreground = ${colors.shade17}
 content-padding = 1
 click-left = "$HOME/.config/rofi/powermenu/powermenu.sh"
 content = "⏻"
