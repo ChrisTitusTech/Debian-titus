@@ -80,4 +80,4 @@ picom --config "$HOME/.config/bspwm/picom.conf" &
 flameshot &
 synology-drive &
 bspc desktop -f ^1
-
+setxkbmap -option "caps:escape_shifted_capslock" &
