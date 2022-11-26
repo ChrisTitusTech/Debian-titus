@@ -31,31 +31,6 @@ cp .Xnord /home/$username
 cp -R dotconfig/* /home/$username/.config/
 cp bg.jpg /home/$username/Pictures/
 mv user-dirs.dirs /home/$username/.config
-changeinterface() {
-config="/home/$username/.config/polybar/config.ini"
-eth() {
-if=$(ip -br l | awk '$1 !~ "lo|vir|wl|tun" { print $1}')
-if [ -z "$if" ];then
-        # If there is no eth interface, do not anything.
-        exit
-fi
-defif="eth0"  # default eth interface of polybar config
-sed -i "s/$defif/$if/g" "$config" # change default eth interface to yours
-}
-wlan() {
-if=$(ip -br l | awk '$1 !~ "lo|vir|eth|en|tun" { print $1}')
-if [ -z "$if" ];then
-        # If there is no wlan interface, do not anything.
-        exit
-fi
-defif="wlan0"  # default wlan interface of polybar config
-sed -i "s/$defif/$if/g" "$config" # change default wlan interface to yours
-}
-# Run functions
-eth
-wlan
-}
-changeinterface
 chown -R $username:$username /home/$username
 tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
 mv /home/$username/.config/sddm.conf /etc/sddm.conf
