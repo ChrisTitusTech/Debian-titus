@@ -78,3 +78,6 @@ sudo nala install brave-browser -y
 # Enable graphical login and change target from CLI to GUI
 systemctl enable sddm
 systemctl set-default graphical.target
+
+# Polybar configuration
+bash scripts/changeinterface

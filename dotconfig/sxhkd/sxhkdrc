@@ -16,13 +16,13 @@ super + Escape
 
 # My program Hotkeys
 super + b
-	brave-browser-stable
+	brave-browser
 
 super + p 
-	flameshot full -p /media/drive/Screenshots
+	flameshot full -p /home/titus/SynologyDrive/Screenshots/
 
 super + shift + p
-	flameshot gui -p /media/drive/Screenshots
+	flameshot gui -p /home/titus/SynologyDrive/Screenshots/
 
 #
 # bspwm hotkeys
@@ -36,9 +36,9 @@ super + alt + {q,r}
 super + q
 	bspc node -{c,k}
 
-# alternate between the tiled and monocle layout
+# disable and enable 
 super + m
-	bspc desktop -l next
+	synclient TouchpadOff=$(synclient -l | grep -q 'TouchpadOff.*1'; echo $?)
 
 # send the newest marked node to the newest preselected node
 super + y
