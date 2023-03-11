@@ -4,7 +4,7 @@ Debian customizations from Chris Titus Tech
 ## Requirements
 _This install changes Debian to the SID (Dev) Branch_
 
-### Download Debian non-free netinstall
+### Download Debian Testing netinstall
 
 Use the following Debian ISO as the base [<https://cdimage.debian.org/cdimage/weekly-builds/amd64/iso-cd/>](https://cdimage.debian.org/cdimage/weekly-builds/amd64/iso-cd/)
 
