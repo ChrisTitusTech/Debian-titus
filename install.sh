@@ -79,5 +79,45 @@ sudo nala install brave-browser -y
 systemctl enable sddm
 systemctl set-default graphical.target
 
+# Configure bash to use nala wrapper instead of apt
+ubashrc="/home/$username/.bashrc"
+rbashrc="/root/.bashrc"
+if [ -f "$ubashrc" ]; then
+echo '
+apt() {
+  command nala "$@"
+}
+sudo() {
+  if [ "$1" = "apt" ]; then
+    shift
+    command sudo nala "$@"
+  else
+    command sudo "$@"
+  fi
+}' | tee -a "$ubashrc" > /dev/null
+fi
+
+if [ -f "$rbashrc" ]; then
+echo '
+apt() {
+  command nala "$@"
+}
+sudo() {
+  if [ "$1" = "apt" ]; then
+    shift
+    command sudo nala "$@"
+  else
+    command sudo "$@"
+  fi
+}' | tee -a "$rbashrc" > /dev/null
+fi
+
+# Beautiful bash
+git clone https://github.com/ChrisTitusTech/mybash
+cd mybash
+bash setup.sh
+cd $builddir
+
 # Polybar configuration
 bash scripts/changeinterface
+
