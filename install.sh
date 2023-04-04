@@ -83,7 +83,7 @@ systemctl set-default graphical.target
 ubashrc="/home/$username/.bashrc"
 rbashrc="/root/.bashrc"
 if [ -f "$ubashrc" ]; then
-echo '
+cat << \EOF >> "$ubashrc"
 apt() {
   command nala "$@"
 }
@@ -94,22 +94,16 @@ sudo() {
   else
     command sudo "$@"
   fi
-}' | tee -a "$ubashrc" > /dev/null
+}
+EOF
 fi
 
 if [ -f "$rbashrc" ]; then
-echo '
+cat << \EOF >> "$rbashrc"
 apt() {
   command nala "$@"
 }
-sudo() {
-  if [ "$1" = "apt" ]; then
-    shift
-    command sudo nala "$@"
-  else
-    command sudo "$@"
-  fi
-}' | tee -a "$rbashrc" > /dev/null
+EOF
 fi
 
 # Beautiful bash
