@@ -69,42 +69,15 @@ cd $builddir
 rm -rf Nordzy-cursors
 
 # Install brave-browser
-sudo nala install apt-transport-https curl -y
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo nala update
-sudo nala install brave-browser -y
+nala install apt-transport-https curl -y
+curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
+nala update
+nala install brave-browser -y
 
 # Enable graphical login and change target from CLI to GUI
 systemctl enable sddm
 systemctl set-default graphical.target
-
-# Configure bash to use nala wrapper instead of apt
-ubashrc="/home/$username/.bashrc"
-rbashrc="/root/.bashrc"
-if [ -f "$ubashrc" ]; then
-cat << \EOF >> "$ubashrc"
-apt() {
-  command nala "$@"
-}
-sudo() {
-  if [ "$1" = "apt" ]; then
-    shift
-    command sudo nala "$@"
-  else
-    command sudo "$@"
-  fi
-}
-EOF
-fi
-
-if [ -f "$rbashrc" ]; then
-cat << \EOF >> "$rbashrc"
-apt() {
-  command nala "$@"
-}
-EOF
-fi
 
 # Beautiful bash
 git clone https://github.com/ChrisTitusTech/mybash
@@ -115,3 +88,5 @@ cd $builddir
 # Polybar configuration
 bash scripts/changeinterface
 
+# Use nala
+bash scripts/usenala
