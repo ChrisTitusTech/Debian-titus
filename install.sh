@@ -6,10 +6,6 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-# Change Debian to SID Branch
-cp /etc/apt/sources.list /etc/apt/sources.list.bak
-cp sources.list /etc/apt/sources.list
-
 username=$(id -u -n 1000)
 builddir=$(pwd)
 
@@ -25,22 +21,15 @@ cd $builddir
 mkdir -p /home/$username/.config
 mkdir -p /home/$username/.fonts
 mkdir -p /home/$username/Pictures
-mkdir -p /usr/share/sddm/themes
-cp .Xresources /home/$username
-cp .Xnord /home/$username
 cp -R dotconfig/* /home/$username/.config/
 cp bg.jpg /home/$username/Pictures/
 mv user-dirs.dirs /home/$username/.config
 chown -R $username:$username /home/$username
-tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
-mv /home/$username/.config/sddm.conf /etc/sddm.conf
 
-# Installing sugar-candy dependencies
-nala install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 # Installing Essential Programs 
-nala install feh bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
+nala install feh kitty rofi picom thunar nitrogen lxpolkit x11-xserver-utils unzip wget pulseaudio pavucontrol build-essential libx11-dev libxft-dev libxinerama-dev -y
 # Installing Other less important Programs
-nala install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji sddm -y
+nala install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji lightdm -y
 
 # Download Nordic Theme
 cd /usr/share/themes/
@@ -76,7 +65,7 @@ nala update
 nala install brave-browser -y
 
 # Enable graphical login and change target from CLI to GUI
-systemctl enable sddm
+systemctl enable lightdm
 systemctl set-default graphical.target
 
 # Beautiful bash
@@ -84,9 +73,6 @@ git clone https://github.com/ChrisTitusTech/mybash
 cd mybash
 bash setup.sh
 cd $builddir
-
-# Polybar configuration
-bash scripts/changeinterface
 
 # Use nala
 bash scripts/usenala
