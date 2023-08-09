@@ -75,5 +75,5 @@ cd mybash
 bash setup.sh
 cd $builddir
 
-# Use nala
-bash scripts/usenala
+# Set alias for nala
+alias apt=nala
