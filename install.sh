@@ -58,12 +58,11 @@ cd Nordzy-cursors
 cd $builddir
 rm -rf Nordzy-cursors
 
-# Install brave-browser
+# Install floorp-browser
 nala install apt-transport-https curl -y
-curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
+curl -sS --compressed -o /etc/apt/sources.list.d/Floorp.list 'https://ppa.ablaze.one/Floorp.list'
 nala update
-nala install brave-browser -y
+nala install floorp
 
 # Enable graphical login and change target from CLI to GUI
 systemctl enable lightdm
@@ -72,7 +71,7 @@ systemctl set-default graphical.target
 # Beautiful bash
 git clone https://github.com/ChrisTitusTech/mybash
 cd mybash
-bash setup.sh
+sudo -u $username bash setup.sh
 cd $builddir
 
 # Use nala
