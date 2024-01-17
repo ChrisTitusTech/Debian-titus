@@ -63,7 +63,7 @@ nala install apt-transport-https curl -y
 curl -fsSL https://ppa.ablaze.one/KEY.gpg | gpg --dearmor -o /usr/share/keyrings/Floorp.gpg
 curl -sS --compressed -o /etc/apt/sources.list.d/Floorp.list 'https://ppa.ablaze.one/Floorp.list'
 nala update
-nala install floorp
+nala install floorp -y
 
 # Enable graphical login and change target from CLI to GUI
 systemctl enable lightdm
