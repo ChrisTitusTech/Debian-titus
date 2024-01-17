@@ -28,7 +28,7 @@ mv user-dirs.dirs /home/$username/.config
 chown -R $username:$username /home/$username
 
 # Installing Essential Programs 
-nala install feh kitty rofi picom thunar nitrogen lxpolkit x11-xserver-utils unzip wget pulseaudio pavucontrol build-essential libx11-dev libxft-dev libxinerama-dev -y
+nala install feh kitty rofi picom thunar nitrogen lxpolkit x11-xserver-utils unzip wget pipewire wireplumber pavucontrol build-essential libx11-dev libxft-dev libxinerama-dev libx11-xcb-dev libxcb-res0-dev -y
 # Installing Other less important Programs
 nala install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji lightdm -y
 
@@ -60,6 +60,7 @@ rm -rf Nordzy-cursors
 
 # Install floorp-browser
 nala install apt-transport-https curl -y
+curl -fsSL https://ppa.ablaze.one/KEY.gpg | gpg --dearmor -o /usr/share/keyrings/Floorp.gpg
 curl -sS --compressed -o /etc/apt/sources.list.d/Floorp.list 'https://ppa.ablaze.one/Floorp.list'
 nala update
 nala install floorp
@@ -68,11 +69,21 @@ nala install floorp
 systemctl enable lightdm
 systemctl set-default graphical.target
 
+# Enable wireplumber audio service
+
+sudo -u $username systemctl --user enable wireplumber.service
+
 # Beautiful bash
 git clone https://github.com/ChrisTitusTech/mybash
 cd mybash
-sudo -u $username bash setup.sh
+bash setup.sh
 cd $builddir
+
+# DWM Setup
+git clone https://github.com/ChrisTitusTech/dwm-titus
+cd dwm-titus
+make clean install
+cp dwm.desktop /usr/share/xsessions
 
 # Use nala
 bash scripts/usenala
