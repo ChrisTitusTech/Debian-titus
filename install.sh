@@ -76,7 +76,7 @@ sudo -u $username systemctl --user enable wireplumber.service
 # Beautiful bash
 git clone https://github.com/ChrisTitusTech/mybash
 cd mybash
-yes | bash setup.sh
+bash setup.sh
 cd $builddir
 
 # DWM Setup
