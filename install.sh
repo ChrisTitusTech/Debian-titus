@@ -19,6 +19,8 @@ setfont /usr/share/consolefonts/Uni3-TerminusBold28x14.psf.gz
 
 # Let user choose the option of the browser installation
 
+echo "Please select the web browser : "
+
 browser_option=("Floorp" "Thorium")
 select web in "${browser_option[@]}"; do
   if [ "$web" = "Floorp" ]; then
