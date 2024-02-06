@@ -77,20 +77,23 @@ if [[ $web = Floorp ]]; then
   nala install apt-transport-https curl -y
   curl -fsSL https://ppa.ablaze.one/KEY.gpg | gpg --dearmor -o /usr/share/keyrings/Floorp.gpg
   curl -sS --compressed -o /etc/apt/sources.list.d/Floorp.list 'https://ppa.ablaze.one/Floorp.list'
-  nala update
+  nala update  
   nala install floorp -y
 
 # If the option is Thorium
 
 elif [[ $web = Thorium ]]; then
   cd $builddir
+  
   # Grab From the latest release of the amd64
-
+  
+  nala install apt-transport-https curl -y
+  
   wget -O ./deb-packages/thorium-browser.deb "$(curl -s https://api.github.com/repos/Alex313031/Thorium/releases/latest | grep browser_download_url | grep amd64.deb | cut -d '"' -f 4)"
   
   nala install ./deb-packages/thorium-browser.deb -y
-fi
 
+fi
 # Enable graphical login and change target from CLI to GUI
 systemctl enable lightdm
 systemctl set-default graphical.target
