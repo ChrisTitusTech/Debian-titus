@@ -59,12 +59,11 @@ fc-cache -vf
 # Removing zip Files
 rm ./FiraCode.zip ./Meslo.zip
 
-# Install Nordzy cursor
-git clone https://github.com/alvatip/Nordzy-cursors
-cd Nordzy-cursors
-./install.sh
+# Install Sweet cursor
 cd $builddir
-rm -rf Nordzy-cursors
+tar -xvf Sweet-cursors.tar.xz
+mv Sweet-cursors /usr/share/icons/
+rm Sweet-cursors.tar.xz
 
 # Install brave-browser
 nala install apt-transport-https curl -y
