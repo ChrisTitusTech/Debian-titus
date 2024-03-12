@@ -40,7 +40,9 @@ nala install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-th
 
 # Download Nordic Theme
 cd /usr/share/themes/
-git clone https://github.com/EliverLara/Nordic.git
+wget https://github.com/EliverLara/Sweet/releases/download/v4.0/Sweet-Dark-v40.zip
+unzip Sweet-Dark-v40.zip
+rm Sweet-Dark-v40.zip
 
 # Installing fonts
 cd $builddir 
