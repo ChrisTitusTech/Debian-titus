@@ -21,7 +21,6 @@ cd $builddir
 mkdir -p /home/$username/.config
 mkdir -p /home/$username/.fonts
 mkdir -p /home/$username/Pictures
-mkdir -p /usr/share/sddm/themes
 cp .Xresources /home/$username
 cp .Xnord /home/$username
 cp -R dotconfig/* /home/$username/.config/
