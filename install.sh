@@ -54,11 +54,12 @@ fc-cache -vf
 # Removing zip Files
 rm ./FiraCode.zip ./Meslo.zip
 
-# Install Sweet cursor
+# Install Nordzy cursor
+git clone https://github.com/alvatip/Nordzy-cursors
+cd Nordzy-cursors
+./install.sh
 cd $builddir
-tar -xvf Sweet-cursors.tar.xz
-mv Sweet-cursors /usr/share/icons/
-rm Sweet-cursors.tar.xz
+rm -rf Nordzy-cursors
 
 # Install brave-browser
 nala install apt-transport-https curl -y
@@ -70,12 +71,6 @@ nala install brave-browser -y
 # Enable graphical login and change target from CLI to GUI
 systemctl enable lightdm
 systemctl set-default graphical.target
-
-# Beautiful bash
-git clone https://github.com/ChrisTitusTech/mybash
-cd mybash
-bash setup.sh
-cd $builddir
 
 # Polybar configuration
 bash scripts/changeinterface
