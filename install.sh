@@ -6,10 +6,6 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-# Change Debian to SID Branch
-cp /etc/apt/sources.list /etc/apt/sources.list.bak
-cp sources.list /etc/apt/sources.list
-
 username=$(id -u -n 1000)
 builddir=$(pwd)
 
@@ -25,30 +21,27 @@ cd $builddir
 mkdir -p /home/$username/.config
 mkdir -p /home/$username/.fonts
 mkdir -p /home/$username/Pictures
-mkdir -p /usr/share/sddm/themes
 cp .Xresources /home/$username
 cp .Xnord /home/$username
 cp -R dotconfig/* /home/$username/.config/
-cp bg.jpg /home/$username/Pictures/
+cp bg.jpg /home/$username/Pictures/background.jpg
 mv user-dirs.dirs /home/$username/.config
 chown -R $username:$username /home/$username
-tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
-mv /home/$username/.config/sddm.conf /etc/sddm.conf
 
-# Installing sugar-candy dependencies
-nala install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 # Installing Essential Programs 
-nala install feh bspwm sxhkd kitty rofi polybar picom thunar lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
+nala install feh bspwm sxhkd kitty arandr rofi polybar picom thunar lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
 # Installing Other less important Programs
-nala install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme fonts-noto-color-emoji sddm -y
+nala install neofetch flameshot psmisc vim lxappearance papirus-icon-theme fonts-noto-color-emoji lightdm zoxide -y
 
 # Download Nordic Theme
 cd /usr/share/themes/
-git clone https://github.com/EliverLara/Nordic.git
+wget https://github.com/EliverLara/Sweet/releases/download/v4.0/Sweet-Dark-v40.zip
+unzip Sweet-Dark-v40.zip
+rm Sweet-Dark-v40.zip
 
 # Installing fonts
 cd $builddir 
-nala install fonts-font-awesome
+nala install fonts-font-awesome -y
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 unzip FiraCode.zip -d /home/$username/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
@@ -76,14 +69,8 @@ nala update
 nala install brave-browser -y
 
 # Enable graphical login and change target from CLI to GUI
-systemctl enable sddm
+systemctl enable lightdm
 systemctl set-default graphical.target
-
-# Beautiful bash
-git clone https://github.com/ChrisTitusTech/mybash
-cd mybash
-bash setup.sh
-cd $builddir
 
 # Polybar configuration
 bash scripts/changeinterface
